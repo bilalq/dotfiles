@@ -6,6 +6,8 @@ URxvt.keysym.Control-M-c: perl:clipboard:copy
 URxvt.keysym.Control-M-v: perl:clipboard:paste
 URxvt*scrollBar:false
 
+emacs*cursorColor: Orchid
+
 !Pseudo-trasparency settings: 
 !URxvt*inheritPixmap:true
 !URxvt*tintColor:white
