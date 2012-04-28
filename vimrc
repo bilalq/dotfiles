@@ -22,6 +22,7 @@ set mouse=a
 :filetype plugin on
 :filetype indent on
 let &t_Co=256
+let mapleader=","
 colorscheme jellybeans
 
 "Convenience mappings
@@ -48,9 +49,9 @@ noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>D :NERDTreeFind<CR>
 noremap <Leader>v :ConqueTermVSplit<Space>bash<cr>
 noremap <Leader>b :ConqueTermSplit<Space>bash<cr>
+nnoremap <Leader>t <Esc>:tabnew<CR>
 
 "Tab management
-nnoremap ,t <Esc>:tabnew<CR>
 
 "Shift-tab reverse-indenting
 nnoremap <S-Tab> <<
@@ -61,11 +62,6 @@ au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 au FileType make setlocal noexpandtab
 
 "NERDTree settings
-map nt :NERDTree .<CR>
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
-
-"Latex settings
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
