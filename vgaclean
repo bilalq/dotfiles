@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#Script that shuts off second graphics card on my laptop
+echo DIGD > /sys/kernel/debug/vgaswitcheroo/switch
+echo OFF > /sys/kernel/debug/vgaswitcheroo/switch
