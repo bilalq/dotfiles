@@ -4,13 +4,17 @@
 * Xresources 
 * awesome window manager
 
+##Bash Customizations##
+* bashrc: Contains modified prompt and PATH
+* bash\_aliases: aliases for frequently used commands
+
 ##Vim Customizations##
 
 ###Plugins###
 * C for vim: Makes vim a C/CPP IDE
 * Coffee: Makes vim a CoffeeScript IDE
 * Rails: Makes vim a rails IDE
-* pekepeke: Makes vim a Titanium IDE
+* Titanium: Makes vim a Titanium IDE
 * Syntastic: Adds syntax checking
 * Fugitive: Git wrapper for Vim
 * NERDTree: Project organizer
@@ -28,3 +32,13 @@
 * molokai
 * lettuce
 * solarized
+
+##Xresources##
+* Changed colors and modeled them after the jellybeans colorscheme
+* Added support for clipboard, tabs, and proper font display in urxvt
+* Set emacs cursor color
+
+##Awesome Customizations##
+* Modified order of layouts
+* Changed default terminal to urxvt
+
