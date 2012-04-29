@@ -8,6 +8,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/filer/tmp2/contrib/lib/pkgconfig
 export EDITOR=vim
 export PS1="[\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]]\$ "
 export TERM=xterm-256color
+export CS="~/documents/homework/314/cpp"
 
 #program shortcuts
 alias stalk="~/.stalk w"
@@ -41,7 +42,7 @@ alias sc="cd ~/.scripts;ls"
 alias vi="vim"
 alias v="vim"
 alias doc="cd ~/documents;ls"
-alias cs="cd ~/documents/homework/314/cpp/;vim -O mayancalc.cc mayandate.cc gregoriandate.cc mayancalc.h"
+alias cs="cd $CS;vim -O mayancalc.cc mayandate.cc gregoriandate.cc mayancalc.h"
 alias drop="cd /filer/tmp2/bilalq/Dropbox;ls"
 alias filer="cd /filer/tmp2"
 alias contrib="cd /filer/tmp2/contrib;ls"
