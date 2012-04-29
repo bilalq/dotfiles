@@ -40,3 +40,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 export CS="~/documents/homework/314/cpp"
 alias cs="cd $CS;vim -O mayancalc.cc mayandate.cc gregoriandate.cc mayancalc.h"
+alias cs="cd $CS;vim -O mayancalc.cc mayancalc.h -c \"tabnew mayandate.cc\" -c \"vsp mayancalc.h\" -c \"tabnew gregoriandate.cc\" -c \"vsp mayancalc.h\" -c \"tabnew assign.txt\" -c \"tabnext\""

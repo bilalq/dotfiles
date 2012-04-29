@@ -46,6 +46,7 @@ nnoremap <c-k> <c-w>k
 let mapleader=","
 nnoremap <Leader>l :noh<CR> 
 nnoremap <Leader>a gt
+nnoremap <A :tabprevious<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
 nnoremap <Leader>v :ConqueTermVSplit<Space>bash<cr>
