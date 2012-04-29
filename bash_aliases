@@ -14,6 +14,7 @@ alias egrep='egrep --color=auto'
 alias chrome="chromium-browser &"
 alias bmod='vim ~/.bashrc'
 alias bsave='source ~/.bashrc'
+alias alt='vim ~/.bash_aliases'
 alias vmod='vim ~/.vimrc'
 alias vi='vim'
 alias v='vim'
@@ -24,7 +25,7 @@ alias apacherestart="sudo service apache2 restart"
 
 #moving around
 alias me='cd ~/;ls'
-alias doc='cd ~/Documents/;ls'
+alias doc='cd ~/documents/;ls'
 alias win7='cd /media/Acer/'
 alias devio="cd ~/devio/develop.io;ls"
 
