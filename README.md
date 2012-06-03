@@ -11,21 +11,22 @@
 ##Vim Customizations##
 
 ###Plugins###
-* C for vim: Makes vim a C/CPP IDE
+* C: Makes vim a C/CPP IDE
+* CloseTag: Close last opened HTML Tag
 * Coffee: Makes vim a CoffeeScript IDE
-* Rails: Makes vim a rails IDE
-* Titanium: Makes vim a Titanium IDE
-* Syntastic: Adds syntax checking
-* Fugitive: Git wrapper for Vim
-* NERDTree: Project organizer
-* NERDCommenter: Toggles commenting
+* ConqueTerm: Shell in vim
+* Fugitive: Git wrapper for vim
+* Jekyll: Rapid jekyll blogging in vim
 * MatchTag: HTML tag highlighting
 * MarkDown: Lets vim recognize markdown
 * MatchIt: Tag jumping for html
+* NERDCommenter: Toggles commenting
+* NERDTree: Project organizer
+* Rails: Makes vim a rails IDE
 * Surround: HTML manipulator
 * SnipMate: Code snippets
-* ConqueTerm: Shell in vim
-* CloseTag: Close last opened HTML Tag
+* Syntastic: Adds syntax checking
+* Titanium: Makes vim a Titanium IDE
 
 ###Colorschemes###
 * jellybeans
