@@ -20,6 +20,7 @@
 * NERDTree: Project organizer
 * NERDCommenter: Toggles commenting
 * MatchTag: HTML tag highlighting
+* MarkDown: Lets vim recognize markdown
 * MatchIt: Tag jumping for html
 * Surround: HTML manipulator
 * SnipMate: Code snippets
