@@ -65,3 +65,10 @@ au FileType make setlocal noexpandtab
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+
+
+"Jekyll setting"
+let g:jekyll_path = "~/blog"
+map <Leader>jb  :JekyllBuild<CR>
+map <Leader>jn  :JekyllPost<CR>
+map <Leader>jl  :JekyllList<CR>
