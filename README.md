@@ -15,6 +15,7 @@
 * CloseTag: Close last opened HTML Tag
 * Coffee: Makes vim a CoffeeScript IDE
 * ConqueTerm: Shell in vim
+* Ctrl-P: Fuzzy file searching
 * Fugitive: Git wrapper for vim
 * Jekyll: Rapid jekyll blogging in vim
 * MatchTag: HTML tag highlighting
