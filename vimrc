@@ -6,7 +6,6 @@ set history=300
 set hlsearch
 set ruler
 set viminfo='20,\"50
-set nocompatible
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -20,7 +19,7 @@ set smartindent
 set laststatus=2
 set mouse=a
 set pastetoggle=<F2>
-:filetype plugin indent on
+filetype plugin indent on
 let &t_Co=256
 call pathogen#infect()
 colorscheme jellybeans
@@ -52,6 +51,9 @@ nnoremap <Leader>D :NERDTreeFind<CR>
 nnoremap <Leader>v :ConqueTermVSplit<Space>bash<cr>
 nnoremap <Leader>b :ConqueTermSplit<Space>bash<cr>
 nnoremap <Leader>t <Esc>:tabnew<CR>
+nnoremap <Leader>jb  :JekyllBuild<CR>
+nnoremap <Leader>jn  :JekyllPost<CR>
+nnoremap <Leader>jl  :JekyllList<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
@@ -66,9 +68,5 @@ let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-
-"Jekyll setting"
+"Jekyll settings"
 let g:jekyll_path = "~/blog"
-map <Leader>jb  :JekyllBuild<CR>
-map <Leader>jn  :JekyllPost<CR>
-map <Leader>jl  :JekyllList<CR>
