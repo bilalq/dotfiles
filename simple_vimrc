@@ -1,23 +1,27 @@
-"A simple vimrc that I give to people just starting to use Vim.
+"A simple vimrc that I give to people just starting to use Vim."
 
 "Basic settings"
-set nocompatible "Fixes old Vi bugs
-syntax on "Turns on syntax highlighting
-set backspace=indent,eol,start "Makes backspace work
-set history=200 "Sets undo history size
-set ruler "Sets up status bar
-set number "Turns on line numbering
-set tabstop=4 "Sets indent size
-set shiftwidth=4 "See above
-let &t_Co=256 "Sets terminal to use 256 colors
-colorscheme elflord "Sets colorscheme to elflord
+set nocompatible "Fixes old Vi bugs"
+syntax on "Turns on syntax highlighting"
+set backspace=indent,eol,start "Makes backspace work"
+set history=200 "Sets undo history size"
+set ruler "Sets up status bar"
+set number "Turns on line numbering"
+set tabstop=4 "Sets indent size of tabs"
+set shiftwidth=4 "Sets auto-indent size"
+set autoindent "Turns on auto-indenting"
+set smartindent "Remembers previous indent when creating new lines"
+let &t_Co=256 "Sets terminal to use 256 colors"
+colorscheme elflord "Sets colorscheme to elflord"
 
-"Search settings
-set hlsearch "Highlights search terms
-set showmatch "Highlights matching parentheses
-set ignorecase "Ignores case when searching
-set smartcase "Unless you put some caps in your search term
 
-"Filetype settings
-:filetype plugin on "Turns on plugin support
-:filetype indent on "Turns on auto-indenting
+"Search settings"
+set hlsearch "Highlights search terms"
+set showmatch "Highlights matching parentheses"
+set ignorecase "Ignores case when searching"
+set smartcase "Unless you put some caps in your search term"
+
+
+"Filetype settings"
+filetype plugin on "Turns on plugin support for specific filetypes"
+filetype indent on "Turns on auto-indenting for specific filetypes"
