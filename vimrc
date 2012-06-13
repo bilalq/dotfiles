@@ -2,6 +2,7 @@
 set nocompatible
 syntax on
 set backspace=indent,eol,start
+set wildignore+=*/tmp/*,*/build/*,*.so,*.swp,*.zip
 set history=300
 set hlsearch
 set ruler
