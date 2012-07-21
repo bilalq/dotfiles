@@ -74,3 +74,7 @@
   path = vim/bundle/vim-surround
   url = https://github.com/tpope/vim-surround.git
   ignore = dirty
+[submodule "vim/bundle/js-hint.vim"]
+  path = vim/bundle/js-hint.vim
+  url = https://github.com/wookiehangover/jshint.vim.git
+  ignore = dirty

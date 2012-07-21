@@ -30,6 +30,7 @@
 * Ctrl-P: Fuzzy file searching
 * Fugitive: Git wrapper for vim
 * Jekyll: Rapid jekyll blogging in vim
+* JSHint: Javascript linting in vim
 * MarkDown: Adds markdown support to vim
 * MatchIt: Tag jumping for html
 * MatchTag: HTML tag highlighting
