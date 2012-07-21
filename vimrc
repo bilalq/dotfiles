@@ -3,28 +3,36 @@ set nocompatible
 syntax on
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.so,*.swp,*.zip
-set history=300
-set hlsearch
-set ruler
-set viminfo='20,\"50
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set showmatch
 set virtualedit=onemore
-set ignorecase
-set smartcase
+set history=500
 set number                     
-set autoindent
-set smartindent
-set laststatus=2
 set mouse=a
 set pastetoggle=<F2>
+set t_Co=256
 filetype plugin indent on
-let &t_Co=256
-let g:Powerline_symbols = 'fancy'
-call pathogen#infect()
 colorscheme jellybeans
+call pathogen#infect()
+
+"Search settings"
+set hlsearch
+set incsearch
+set showmatch
+set ignorecase
+set smartcase
+silent! autocmd InsertEnter * set nohlsearch
+silent! autocmd InsertLeave * set hlsearch
+
+"Indentation settings"
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+set smarttab
+
+"Statusline settings"
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
 
 "Convenience mappings"
 inoremap jj <Esc>`^
@@ -54,11 +62,16 @@ nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>jb  :JekyllBuild<CR>
 nnoremap <Leader>jn  :JekyllPost<CR>
 nnoremap <Leader>jl  :JekyllList<CR>
-nnoremap <Leader>p :set paste!<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
+
+"Get rid of annoying bell sound"
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 
 "Filetype specific settings"
 au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
