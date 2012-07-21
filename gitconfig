@@ -1,0 +1,14 @@
+[user]
+	name = Bilal Quadri
+	email = bilalquadri92@gmail.com
+[core]
+	excludesfile = $HOME/.gitignore_global
+[color]
+	ui = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+	co = checkout
