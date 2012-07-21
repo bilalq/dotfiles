@@ -39,9 +39,9 @@
 * Powerline: Awesome status line for vim
 * Rails: Adds functions that assist with rails coding
 * SnipMate: Code snippets; Contains 3 dependency bundles:
-    tlib\_vim
-    vim-addon-mw-utils
-    snipmate-snippets
+    * tlib\_vim
+    * vim-addon-mw-utils
+    * snipmate-snippets
 * Surround: HTML manipulator
 * Syntastic: Adds syntax checking
 * Titanium: Adds Titanium support to vim
