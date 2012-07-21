@@ -22,6 +22,7 @@ set mouse=a
 set pastetoggle=<F2>
 filetype plugin indent on
 let &t_Co=256
+let g:Powerline_symbols = 'fancy'
 call pathogen#infect()
 colorscheme jellybeans
 
@@ -49,12 +50,11 @@ nnoremap <Leader>a gt
 nnoremap <A :tabprevious<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
-nnoremap <Leader>v :ConqueTermVSplit<Space>bash<cr>
-nnoremap <Leader>b :ConqueTermSplit<Space>bash<cr>
 nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>jb  :JekyllBuild<CR>
 nnoremap <Leader>jn  :JekyllPost<CR>
 nnoremap <Leader>jl  :JekyllList<CR>
+nnoremap <Leader>p :set paste!<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
