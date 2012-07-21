@@ -1,6 +1,7 @@
 "Basic settings"
 set nocompatible
 syntax on
+call pathogen#infect()
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.so,*.swp,*.zip
 set virtualedit=onemore
@@ -9,9 +10,8 @@ set number
 set mouse=a
 set pastetoggle=<F2>
 set t_Co=256
-filetype plugin indent on
 colorscheme jellybeans
-call pathogen#infect()
+filetype plugin indent on
 
 "Search settings"
 set hlsearch
