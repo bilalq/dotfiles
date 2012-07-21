@@ -1,17 +1,14 @@
 #ls aliases and such
 alias ls='ls --color=auto'
+alias ls='ls -G'
 alias l=ls
 alias s=ls
 alias ll="ls -lh"
 alias la="ls -alh"
-alias lsd='ls --color=always -al | grep ^d'
-alias lf='ls --color=always -l | grep ^d'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias lsd='ls -Gal | grep ^d'
+alias lf='ls -l | grep ^d'
 
 #convenience
-alias chrome="chromium-browser &"
 alias bmod='vim ~/.bashrc'
 alias bsave='source ~/.bashrc'
 alias alt='vim ~/.bash_aliases'
@@ -20,8 +17,8 @@ alias vi='vim'
 alias v='vim'
 alias cc='clear'
 alias ..='cd ..'
-alias vgacheck="sudo cat /sys/kernel/debug/vgaswitcheroo/switch"
-alias apacherestart="sudo service apache2 restart"
+#alias vgacheck="sudo cat /sys/kernel/debug/vgaswitcheroo/switch"
+#alias apacherestart="sudo service apache2 restart"
 alias tmux="tmux -2"
 
 #moving around
