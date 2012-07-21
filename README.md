@@ -1,47 +1,60 @@
 #This repo contains my personal customizations for:#
-* bash
-* vim
+* Awesome window manager
+* Bash
+* Input
+* Vim
 * Xresources 
-* awesome window manager
+
+
+##Awesome Customizations##
+* Modified order of layouts
+* Changed default terminal to urxvt
+
 
 ##Bash Customizations##
-* bashrc: Contains modified prompt and PATH
-* bash\_aliases: aliases for frequently used commands
+* bashrc: Sources scripts, exports thing, and contains modified history settings
+* bash\_aliases: Contains aliases for frequently used commands
+
+
+##Input##
+* Autocomplete ignores case
+* Editing mode for prompt set to vi
+* Key commands such as jj, gg, G, and <c-p> added
+
 
 ##Vim Customizations##
 
 ###Plugins###
-* C: Makes vim a C/CPP IDE
 * CloseTag: Close last opened HTML Tag
-* Coffee: Makes vim a CoffeeScript IDE
-* ConqueTerm: Shell in vim
+* Coffee: Adds coffeescript support to vim
 * Ctrl-P: Fuzzy file searching
 * Fugitive: Git wrapper for vim
 * Jekyll: Rapid jekyll blogging in vim
-* MatchTag: HTML tag highlighting
-* MarkDown: Lets vim recognize markdown
+* MarkDown: Adds markdown support to vim
 * MatchIt: Tag jumping for html
+* MatchTag: HTML tag highlighting
 * NERDCommenter: Toggles commenting
 * NERDTree: Project organizer
-* Rails: Makes vim a rails IDE
+* Powerline: Awesome status line for vim
+* Rails: Adds functions that assist with rails coding
+* SnipMate: Code snippets; Contains 3 dependency bundles:
+  * tlib\_vim
+  * vim-addon-mw-utils
+  * snipmate-snippets
 * Surround: HTML manipulator
-* SnipMate: Code snippets
 * Syntastic: Adds syntax checking
-* Titanium: Makes vim a Titanium IDE
+* Titanium: Adds Titanium support to vim
 
 ###Colorschemes###
-* jellybeans
+* autumn
 * awesome
-* molokai
+* jellybeans
 * lettuce
-* solarized
+* molokai
+
 
 ##Xresources##
 * Changed colors and modeled them after the jellybeans colorscheme
 * Added support for clipboard, tabs, and proper font display in urxvt
 * Set emacs cursor color
-
-##Awesome Customizations##
-* Modified order of layouts
-* Changed default terminal to urxvt
 
