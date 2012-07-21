@@ -1,4 +1,4 @@
-*ctrlp.txt*       Fuzzy file, buffer, mru and tag finder. v1.7.7
+*ctrlp.txt*       Fuzzy file, buffer, mru, tag, ... finder. v1.78
 *CtrlP* *ControlP* *'ctrlp'* *'ctrl-p'*
 ===============================================================================
 #                                                                             #
@@ -23,10 +23,10 @@ CONTENTS                                                       *ctrlp-contents*
 ===============================================================================
 INTRO                                                             *ctrlp-intro*
 
-Full path fuzzy file, buffer, mru and tag finder with an intuitive interface.
-Written in pure Vimscript for MacVim and Vim version 7.0+. Has full support for
-Vim's |regexp| as search pattern, built-in MRU files monitoring, project's root
-finder, and more.
+Full path fuzzy file, buffer, mru, tag, ... finder with an intuitive interface.
+Written in pure Vimscript for MacVim, gVim and Vim version 7.0+. Has full
+support for Vim's |regexp| as search pattern, built-in MRU files monitoring,
+project's root finder, and more.
 
 To enable optional extensions (tag, dir, rtscript...), see |ctrlp-extensions|.
 
@@ -45,6 +45,7 @@ Overview:~
   |ctrlp_max_height|            Max height of the match window.
   |ctrlp_switch_buffer|         Jump to an open buffer if already opened.
   |ctrlp_reuse_window|          Reuse special windows (help, quickfix, etc).
+  |ctrlp_tabpage_position|      Where to put the new tab page.
   |ctrlp_working_path_mode|     How to set CtrlP's local working directory.
   |ctrlp_root_markers|          Additional, high priority root markers.
   |ctrlp_use_caching|           Use per-session caching or not.
@@ -145,6 +146,16 @@ Example: >
   let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
 <
 
+                                                   *'g:ctrlp_tabpage_position'*
+Where to put the new tab page when opening one: >
+  let g:ctrlp_tabpage_position = 'ac'
+<
+  a - after.
+  b - before.
+  c - the current tab page.
+  l - the last tab page.
+  f - the first tab page.
+
                                                   *'g:ctrlp_working_path_mode'*
 When starting up, CtrlP sets its local working directory according to this
 variable: >
@@ -152,22 +163,25 @@ variable: >
 <
   1 - the directory of the current file.
   2 - the nearest ancestor that contains one of these directories or files:
-      .git/ .hg/ .svn/ .bzr/ _darcs/
+      .git .hg .svn .bzr _darcs
   0 - don't manage working directory.
 Note: you can use b:ctrlp_working_path_mode (a |b:var|) to set this option on a
 per buffer basis.
 
                                                        *'g:ctrlp_root_markers'*
-Use this to set your own root markers in addition to the default ones (.git/,
-.hg/, .svn/, .bzr/, and _darcs/). Your markers will take precedence: >
+Use this to set your own root markers in addition to the default ones (.git,
+.hg, .svn, .bzr, and _darcs). Your markers will take precedence: >
   let g:ctrlp_root_markers = ['']
 <
 
                                                         *'g:ctrlp_use_caching'*
-Set this to 0 to disable per-session caching. When disabled, caching will still
-be enabled for directories that have more than 4000 files: >
+Enable/Disable per-session caching: >
   let g:ctrlp_use_caching = 1
 <
+  0 - Disable caching.
+  1 - Enable caching.
+  n - When bigger than 1, disable caching and use the number as the limit to
+      enable caching again.
 Note: you can quickly purge the cache by pressing <F5> while inside CtrlP.
 
                                                 *'g:ctrlp_clear_cache_on_exit'*
@@ -250,12 +264,12 @@ when scanning large projects: >
     \ }
 <
 Examples: >
-  let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
-  let g:ctrlp_user_command = ['.hg/', 'hg --cwd %s locate -I .']
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+  let g:ctrlp_user_command = ['.hg', 'hg --cwd %s locate -I .']
   let g:ctrlp_user_command = {
     \ 'types': {
-      \ 1: ['.git/', 'cd %s && git ls-files'],
-      \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+      \ 1: ['.git', 'cd %s && git ls-files'],
+      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
       \ },
     \ 'fallback': 'find %s -type f'
     \ }
@@ -286,7 +300,7 @@ If non-zero, this will enable opening multiple files with <c-z> and <c-o>: >
   let g:ctrlp_open_multiple_files = 'v'
 <
 Example: >
-  let g:ctrlp_open_multiple_files = '2vr'
+  let g:ctrlp_open_multiple_files = '2vjr'
 <
 For the number:
   - If given, it'll be used as the maximum number of windows or tabs to create
@@ -297,11 +311,9 @@ For the letters:
   h - each file in a new horizontal split.
   v - each file in a new vertical split.
   i - all files as hidden buffers.
-  Reuse the current window:
-  tr,
-  hr,
-  vr - open the first file in the current window, then the remaining files in
-       new splits or new tabs just like with t, h, v.
+  j - after opening, jump to the first opened tab or window.
+  r - open the first file in the current window, then the remaining files in
+      new splits or new tabs depending on which of h, v and t is also present.
 
                                                             *'g:ctrlp_arg_map'*
 When this is set to 1, the <c-o> and <c-y> mappings will accept one extra key
@@ -312,16 +324,20 @@ Pressing <c-o> or <c-y> will then prompt for a keypress. The key can be:
   t - open in tab(s)
   h - open in horizontal split(s)
   v - open in vertical split(s)
-  r - open in current window (for <c-y> only)
-  <esc>, <c-c>, <c-g> - cancel and go back to the prompt.
+  i - open as hidden buffers (for <c-o> only)
+  c - clear the marked files (for <c-o> only)
+  r - open in the current window (for <c-y> only)
+  <esc>, <c-c>, <c-u> - cancel and go back to the prompt.
   <cr> - use the default behavior specified with |g:ctrlp_open_new_file| and
   |g:ctrlp_open_multiple_files|.
 
                                                     *'g:ctrlp_follow_symlinks'*
-Set this to 1 to follow symbolic links when listing files: >
+If non-zero, CtrlP will follow symbolic links when listing files: >
   let g:ctrlp_follow_symlinks = 0
 <
-When enabled, looped internal symlinks will be ignored to avoid duplicates.
+  0 - don't follow symbolic links.
+  1 - follow but ignore looped internal symlinks to avoid duplicates.
+  2 - follow all symlinks indiscriminately.
 
                                                         *'g:ctrlp_lazy_update'*
 Set this to 1 to enable the lazy-update feature: only update the match window
@@ -335,6 +351,10 @@ delay time in milliseconds.
 Set this to 1 to enable seeding the prompt with the current file's relative
 path: >
   let g:ctrlp_default_input = 0
+<
+Instead of 1 or 0, if the value of the option is a string, it'll be used as-is
+as the default input: >
+  let g:ctrlp_default_input = 'anystring'
 <
 
                                                          *'g:ctrlp_use_migemo'*
@@ -660,7 +680,7 @@ Opening/Creating a file:~
     Open the selected file in the 'current' window if possible.
 
   <c-t>
-    Open the selected file in a new 'tab' after the last tabpage.
+    Open the selected file in a new 'tab'.
 
   <c-v>
     Open the selected file in a 'vertical' split.
@@ -748,8 +768,8 @@ c)  End the string with a colon ':' followed by a Vim command to execute that
 
     See also: Vim's |++opt| and |+cmd|.
 
-d)  Submit two dots '..' to go backward the directory tree by 1 level. To go
-    backward multiple levels, use one extra dot for each extra level:
+d)  Submit two dots '..' to go upward the directory tree by 1 level. To go up
+    multiple levels, use one extra dot for each extra level:
 >
          Raw input    Interpreted as
          ..           ../
@@ -976,7 +996,7 @@ MISCELLANEOUS CONFIGS                             *ctrlp-miscellaneous-configs*
 >
   function! s:setcwd()
     let cph = expand('%:p:h', 1)
-    if match(cph, '\v^<.+>://') >= 0 | retu | en
+    if cph =~ '^.\+://' | retu | en
     for mkr in ['.git/', '.hg/', '.svn/', '.bzr/', '_darcs/', '.vimprojects']
       let wd = call('find'.(mkr =~ '/$' ? 'dir' : 'file'), [mkr, cph.';'])
       if wd != '' | let &acd = 0 | brea | en
@@ -1021,12 +1041,18 @@ Special thanks:~
     * Tacahiroy <github.com/tacahiroy>
     * Luca Pette <github.com/lucapette>
     * Seth Fowler <github.com/sfowler>
+    * Lowe Thiderman <github.com/daethorian>
 
 ===============================================================================
 CHANGELOG                                                     *ctrlp-changelog*
 
-Before 2012/05/15~
+    + New option: |g:ctrlp_tabpage_position|.
 
+Before 2012/06/15~
+
+    + New value for |g:ctrlp_follow_symlinks|: 2.
+    + New value for |g:ctrlp_open_multiple_files|: 'j'.
+    + Allow using <c-t>, <c-x>, <c-v> to open files marked by <c-z>.
     + Extend '..' (|ctrlp-input-formats| (d))
     + New input format: '@cd' (|ctrlp-input-formats| (d))
 
