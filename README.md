@@ -2,6 +2,7 @@
 * Awesome window manager
 * Bash
 * Input
+* JSHint
 * Vim
 * Xresources 
 
@@ -16,10 +17,18 @@
 * bash\_aliases: Contains aliases for frequently used commands
 
 
-##Input##
+##Input Customizations##
 * Autocomplete ignores case
 * Editing mode for prompt set to vi
 * Key commands such as jj, gg, G, and <c-p> added
+
+
+##JSHint Customizations##
+* Only report first 10 errors
+* Use ECMAScript 5 rules
+* Allow comma-first style
+* Restrict use of bitwise operators
+* Require curly braces around loops and conditionals
 
 
 ##Vim Customizations##
@@ -54,7 +63,7 @@
 * molokai
 
 
-##Xresources##
+##Xresources Customizations##
 * Changed colors and modeled them after the jellybeans colorscheme
 * Added support for clipboard, tabs, and proper font display in urxvt
 * Set emacs cursor color
