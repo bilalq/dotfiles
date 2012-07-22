@@ -24,7 +24,7 @@ alias tmux="tmux -2"
 #moving around
 alias me='cd ~/;ls'
 alias doc='cd ~/Documents/;ls'
-aliast dot='cd ~/Documents/dotfiles;ls'
+alias dot='cd ~/Documents/dotfiles;ls'
 
 #ssh aliases
 alias facade='ssh facade.rutgers.edu'
