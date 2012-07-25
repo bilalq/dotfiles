@@ -12,6 +12,7 @@ the meantime, here's a way to get jumpstarted with my vim config, since that's
 probably what you want:
 
     git clone --recursive https://github.com/bilalq/dotfiles.git
+    cd dotfiles
     ln -s `pwd`/vimrc ~/.vimrc
     ln -s `pwd`/vim ~/.vim
 
