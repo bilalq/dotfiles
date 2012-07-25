@@ -18,6 +18,7 @@ probably what you want:
 You'll also need to download a patched font for powerline if you want the fancy
 symbols. That's optional though. If you forgot to use the `--recursive` flag or
 are using an older version of git, run these commands:
+
     git submodule init
     git submodule update
 
