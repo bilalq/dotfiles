@@ -13,14 +13,21 @@ set t_Co=256
 colorscheme jellybeans
 filetype plugin indent on
 
+"Colorscheme toggling"
+map <F8> :colorscheme jellybeans<CR>
+map <F9> :colorscheme molokai<CR>
+
 "Search settings"
 set hlsearch
 set incsearch
 set showmatch
 set ignorecase
 set smartcase
-silent! autocmd InsertEnter * set nohlsearch
-silent! autocmd InsertLeave * set hlsearch
+augroup hltoggle
+  autocmd!
+  silent! autocmd InsertEnter * set nohlsearch
+  silent! autocmd InsertLeave * set hlsearch
+augroup end
 
 "Indentation settings"
 set expandtab
@@ -69,13 +76,13 @@ inoremap <S-Tab> <Esc><<i
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
-if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
-endif
+autocmd GUIEnter * set visualbell t_vb=
 
 "Filetype specific settings"
-au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
-au FileType make setlocal noexpandtab
+augroup typeSpecific
+  autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+  autocmd FileType make setlocal noexpandtab
+augroup end
 
 "NERDTree settings"
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
