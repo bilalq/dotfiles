@@ -54,6 +54,7 @@ are using an older version of git, run these commands:
 * Coffee: Adds coffeescript support to vim
 * Ctrl-P: Fuzzy file searching
 * Fugitive: Git wrapper for vim
+* Javascript: Better syntax highlighting and autoindentation for JS
 * Jekyll: Rapid jekyll blogging in vim
 * JSHint: Javascript linting in vim
 * MarkDown: Adds markdown support to vim
@@ -67,6 +68,7 @@ are using an older version of git, run these commands:
   * tlib\_vim
   * vim-addon-mw-utils
   * snipmate-snippets
+* SuperTab: Use tab for auto-complete
 * Surround: HTML manipulator
 * Syntastic: Adds syntax checking
 * Titanium: Adds Titanium support to vim
