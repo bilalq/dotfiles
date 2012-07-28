@@ -16,6 +16,7 @@ filetype plugin indent on
 "Colorscheme toggling"
 map <F8> :colorscheme jellybeans<CR>
 map <F9> :colorscheme molokai<CR>
+map <F10> :colorscheme autumn<CR>
 
 "Search settings"
 set hlsearch
