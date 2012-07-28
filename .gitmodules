@@ -74,3 +74,11 @@
   path = vim/bundle/vim-surround
   url = https://github.com/tpope/vim-surround.git
   ignore = dirty
+[submodule "vim/bundle/supertab"]
+  path = vim/bundle/supertab
+  url = https://github.com/ervandew/supertab.git
+  ignore = dirty
+[submodule "vim/bundle/vim-javascript"]
+  path = vim/bundle/vim-javascript
+  url = https://github.com/pangloss/vim-javascript.git
+  ignore = dirty
