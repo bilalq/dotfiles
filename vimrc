@@ -25,9 +25,9 @@ set showmatch
 set ignorecase
 set smartcase
 augroup hltoggle
-  autocmd!
-  silent! autocmd InsertEnter * set nohlsearch
-  silent! autocmd InsertLeave * set hlsearch
+  au!
+  au InsertEnter * set nohlsearch
+  au InsertLeave * set hlsearch
 augroup end
 
 "Indentation settings"
@@ -77,12 +77,13 @@ inoremap <S-Tab> <Esc><<i
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+au GUIEnter * set visualbell t_vb=
 
 "Filetype specific settings"
 augroup typeSpecific
-  autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
-  autocmd FileType make setlocal noexpandtab
+  au!
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+  au FileType make setlocal noexpandtab
 augroup end
 
 "NERDTree settings"
@@ -92,3 +93,12 @@ let NERDTreeDirArrows=1
 
 "Jekyll settings"
 let g:jekyll_path = "~/blog"
+
+" Show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+nnoremap <C-S-N> :call <SID>SynStack()<CR>
