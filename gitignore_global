@@ -15,3 +15,6 @@ Thumbs.db
 *.dll
 *.o
 *.so
+
+# Temp files #
+*.swp
