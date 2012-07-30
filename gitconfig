@@ -2,7 +2,7 @@
 	name = Bilal Quadri
 	email = bilalquadri92@gmail.com
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [diff]
