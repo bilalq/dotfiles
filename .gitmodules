@@ -82,3 +82,7 @@
   path = vim/bundle/vim-javascript
   url = https://github.com/bilalq/vim-javascript.git
   ignore = dirty
+[submodule "vim/bundle/DiffSince"]
+  path = vim/bundle/DiffSince
+  url = https://github.com/bilalq/DiffSince.git
+  ignore=dirty
