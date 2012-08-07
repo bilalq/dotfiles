@@ -84,5 +84,9 @@
   ignore = dirty
 [submodule "vim/bundle/DiffSince"]
   path = vim/bundle/DiffSince
-  url = https://github.com/bilalq/DiffSince.git
+  url = https://github.com/bilalq/diffsince.git
   ignore=dirty
+[submodule "vim/bundle/vim-colors-solarized"]
+  path = vim/bundle/vim-colors-solarized
+  url = https://github.com/ervandew/vim-colors-solarized.git
+  ignore = dirty
