@@ -7,7 +7,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTIGNORE=?:??
+HISTIGNORE=?:??:vim:doc:vmod:bmod:bsave:alt:lsd:tmux
 
 
 #Export statements
