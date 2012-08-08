@@ -42,7 +42,7 @@ task :ilabs => [:init, :vim, :jshint] do
   sh "ln -s `pwd`/ilab_bashrc ~/.bashrc"
 end
 
-task :me => [:init, :vim, :jshint, :bash] do
+task :me => [:init, :vim, :input, :jshint, :bash] do
   sh "ln -s `pwd`/gitconfig ~/.gitconfig"
   sh "ln -s `pwd`/gitignore_global ~/.gitignore_global"
 end
