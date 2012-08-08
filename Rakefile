@@ -1,4 +1,4 @@
-equire 'rake'
+require 'rake'
 
 task :init do
   sh "git submodule init"
