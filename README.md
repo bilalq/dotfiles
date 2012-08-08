@@ -1,26 +1,21 @@
 #This repo contains my personal customizations for:#
 * Awesome window manager
 * Bash
-* Input
-* JSHint
+* Git
 * Vim
-* Xresources 
+* Miscellaneous other things
+
 
 ##Installation Instructions##
-Eventually, I'll get around to writing a rake file for installation. In
-the meantime, here's a way to get jumpstarted with my vim config, since that's
-probably what you want:
+Get the repo:
 
     git clone --recursive https://github.com/bilalq/dotfiles.git
     cd dotfiles
-    ln -s `pwd`/vimrc ~/.vimrc
-    ln -s `pwd`/vim ~/.vim
 
 If you forgot to use the `--recursive` flag or
-are using an older version of git, run these commands:
+are using an older version of git, run this command:
 
-    git submodule init
-    git submodule update
+    rake up
 
 You'll also need to download a patched font for powerline if you want the fancy
 symbols. That's optional though. 
@@ -31,23 +26,9 @@ symbols. That's optional though.
 
 
 ##Bash Customizations##
-* bashrc: Sources scripts, exports thing, and contains modified history settings
+* bashrc: Sources scripts, exports things, and contains modified history settings
 * bash\_aliases: Contains aliases for frequently used commands
-
-
-##Input Customizations##
-* Autocomplete ignores case
-* Editing mode for prompt set to vi
-* Key commands such as jj, gg, G, and <c-p> added
-
-
-##JSHint Customizations##
-* Only report first 10 errors
-* Use ECMAScript 5 rules
-* Allow comma-first style
-* Restrict use of bitwise operators
-* Require curly braces around loops and conditionals
-
+* ilab\_bashrc: This is a bashrc I use for machines at Rutgers
 
 ##Vim Customizations##
 
@@ -81,9 +62,25 @@ symbols. That's optional though.
 * jellybeans
 * lettuce
 * molokai
+* solarized
 
 
-##Xresources Customizations##
+##Miscellaneous Customizations##
+
+###Input Customizations###
+* Autocomplete ignores case
+* Editing mode for prompt set to vi
+* Key commands such as jj, gg, G, and <c-p> added
+
+
+###JSHint Customizations###
+* Only report first 10 errors
+* Use ECMAScript 5 rules
+* Allow comma-first style
+* Restrict use of bitwise operators
+* Require curly braces around loops and conditionals
+
+###Xresources Customizations###
 * Changed colors and modeled them after the jellybeans colorscheme
 * Added support for clipboard, tabs, and proper font display in urxvt
 * Set emacs cursor color
