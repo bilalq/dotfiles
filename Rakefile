@@ -34,7 +34,7 @@ task :simple_vim do
 end
 
 task :misc do
-  targets = ["inputrc", "jshintrc", "tmux.conf"]
+  targets = ["inputrc", "jshintrc", "irbrc", "tmux.conf"]
   targets.each do |target|
     begin
       sh "ln -s `pwd`/misc/#{target} ~/.#{target}"
@@ -71,9 +71,9 @@ task :git do
     sh "ln -s `pwd`/git/gitignore_global ~/.gitignore_global"
     sh "ln -s `pwd`/git/gitconfig ~/.gitconfig"
   rescue
-    puts "==============================================="
-    puts "Git configuration files already exist. Skipping"
-    puts "==============================================="
+    puts "================================================"
+    puts "Git configuration files already exist. Skipping."
+    puts "================================================"
   end
 end
 
@@ -88,6 +88,7 @@ task :clean do
     "bash_aliases",
     "jshintrc",
     "inputrc",
+    "irbrc",
     "tmux.conf",
     "gitconfig",
     "gitignore_global"
