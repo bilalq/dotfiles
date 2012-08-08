@@ -1,9 +1,9 @@
-require 'rake'
+equire 'rake'
 
 task :init do
-  #sh "git submodule init"
-  #sh "git submodule update"
-  #sh "git submodule foreach git pull"
+  sh "git submodule init"
+  sh "git submodule update"
+  sh "git submodule foreach git pull"
 end
 
 task :update do
@@ -38,11 +38,18 @@ task :bash do
   sh "ln -s `pwd`/bash/bashrc ~/.bashrc"
 end
 
-task :ilabs => [:init, :vim, :jshint] do
+task :ilabs => [:vim, :jshint, :input] do
   sh "ln -s `pwd`/bash/ilab_bashrc ~/.bashrc"
 end
 
-task :me => [:init, :vim, :input, :jshint, :bash] do
+task :me => [:vim, :input, :jshint, :bash] do
   sh "ln -s `pwd`/git/gitconfig ~/.gitconfig"
   sh "ln -s `pwd`/git/gitignore_global ~/.gitignore_global"
+end
+
+task :clean do
+  sh "rm ~/.vim ~/.vimrc ~/.gvimrc"
+  sh "rm ~/.bashrc ~/.bash_aliases"
+  sh "rm ~/.jshintrc ~/.inputrc"
+  sh "rm ~/.gitignore_global"
 end
