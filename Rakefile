@@ -6,27 +6,44 @@ task :init do
   sh "git submodule foreach git pull"
 end
 
-task :update do
+task :up do
   sh "git submodule update"
   sh "git submodule foreach git pull"
 end
 
 task :vim do
-  sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
-  sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
-  sh "ln -s `pwd`/vim/vim ~/.vim"
+  begin
+    sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
+    sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
+    sh "ln -s `pwd`/vim/vim ~/.vim"
+  rescue 
+    puts "================================================"
+    puts "Vim configuration files already exist. Skipping."
+    puts "================================================"
+  end
 end
 
 task :simple_vim do
-  sh "ln -s `pwd`/vim/simple_vimrc ~/.vimrc"
+  begin
+    sh "ln -s `pwd`/vim/simple_vimrc ~/.vimrc"
+  rescue 
+    puts "===================================="
+    puts "Vimrc file already exists. Aborting."
+    puts "===================================="
+  end
 end
 
-task :jshint do
-  sh "ln -s `pwd`/misc/jshint ~/.jshintrc"
-end
-
-task :input do
-  sh "ln -s `pwd`/misc/inputrc ~/.inputrc"
+task :misc do
+  targets = ["inputrc", "jshintrc", "tmux.conf"]
+  targets.each do |target|
+    begin
+      sh "ln -s `pwd`/misc/#{target} ~/.#{target}"
+    rescue 
+      puts "====================================================="
+      puts "#{target} configuration file already exist. Skipping."
+      puts "====================================================="
+    end
+  end
 end
 
 task :awesome do
@@ -34,22 +51,52 @@ task :awesome do
 end
 
 task :bash do
-  sh "ln -s `pwd`/bash/bash_aliases ~/.bash_aliases"
-  sh "ln -s `pwd`/bash/bashrc ~/.bashrc"
+  begin
+    sh "ln -s `pwd`/bash/bashrc ~/.bashrc"
+    sh "ln -s `pwd`/bash/bash_aliases ~/.bash_aliases"
+  rescue 
+    puts "=================================================="
+    puts "Bash configurations files already exist. Skipping."
+    puts "=================================================="
+  end
 end
 
-task :ilabs => [:vim, :jshint, :input] do
+task :ilabs => [:vim, :misc] do
+  sh "rm ~/.bashrc"
   sh "ln -s `pwd`/bash/ilab_bashrc ~/.bashrc"
 end
 
-task :me => [:vim, :input, :jshint, :bash] do
-  sh "ln -s `pwd`/git/gitconfig ~/.gitconfig"
-  sh "ln -s `pwd`/git/gitignore_global ~/.gitignore_global"
+task :git do
+  begin
+    sh "ln -s `pwd`/git/gitignore_global ~/.gitignore_global"
+    sh "ln -s `pwd`/git/gitconfig ~/.gitconfig"
+  rescue
+    puts "==============================================="
+    puts "Git configuration files already exist. Skipping"
+    puts "==============================================="
+  end
 end
 
+task :me => [:vim, :misc, :bash, :git]
+
 task :clean do
-  sh "rm ~/.vim ~/.vimrc ~/.gvimrc"
-  sh "rm ~/.bashrc ~/.bash_aliases"
-  sh "rm ~/.jshintrc ~/.inputrc"
-  sh "rm ~/.gitignore_global"
+  targets = [
+    "vim",
+    "vimrc",
+    "gvimrc",
+    "bashrc",
+    "bash_aliases",
+    "jshintrc",
+    "inputrc",
+    "tmux.conf",
+    "gitconfig",
+    "gitignore_global"
+  ]
+
+  targets.each do |target|
+    begin
+      sh "rm ~/.#{target}"
+    rescue
+    end
+  end
 end
