@@ -17,7 +17,7 @@ alias fox="firefox"
 alias mp="/filer/tmp2/contrib/bin/mplayer"
 alias dp="/filer/tmp2/contrib/bin/linuxdcpp"
 alias box="~/.dropbox-dist/dropboxd"
-alias vmod="vim ~/.vimrc" 
+alias vmod="vim ~/.vimrc"
 alias bmod="vim ~/.bashrc"
 alias bsave="source ~/.bashrc"
 

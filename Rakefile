@@ -16,7 +16,7 @@ task :vim do
     sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
     sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
     sh "ln -s `pwd`/vim/vim ~/.vim"
-  rescue 
+  rescue
     puts "================================================"
     puts "Vim configuration files already exist. Skipping."
     puts "================================================"
@@ -26,7 +26,7 @@ end
 task :simple_vim do
   begin
     sh "ln -s `pwd`/vim/simple_vimrc ~/.vimrc"
-  rescue 
+  rescue
     puts "===================================="
     puts "Vimrc file already exists. Aborting."
     puts "===================================="
@@ -38,7 +38,7 @@ task :misc do
   targets.each do |target|
     begin
       sh "ln -s `pwd`/misc/#{target} ~/.#{target}"
-    rescue 
+    rescue
       puts "====================================================="
       puts "#{target} configuration file already exist. Skipping."
       puts "====================================================="
@@ -54,7 +54,7 @@ task :bash do
   begin
     sh "ln -s `pwd`/bash/bashrc ~/.bashrc"
     sh "ln -s `pwd`/bash/bash_aliases ~/.bash_aliases"
-  rescue 
+  rescue
     puts "=================================================="
     puts "Bash configurations files already exist. Skipping."
     puts "=================================================="

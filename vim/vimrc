@@ -6,7 +6,7 @@ set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.so,*.swp,*.zip
 set virtualedit=onemore
 set history=500
-set number                     
+set number
 set mouse=a
 set pastetoggle=<F2>
 set t_Co=256
@@ -41,6 +41,7 @@ set smarttab
 "Statusline settings"
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 "Convenience mappings"
 inoremap jj <Esc>`^
@@ -61,7 +62,7 @@ nnoremap <c-k> <c-w>k
 
 "Leader Mappings"
 let mapleader=","
-nnoremap <Leader>l :noh<CR> 
+nnoremap <Leader>l :noh<CR>
 nnoremap <Leader>a gt
 nnoremap <A :tabprevious<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
@@ -82,7 +83,7 @@ au GUIEnter * set visualbell t_vb=
 "Filetype specific settings"
 augroup typeSpecific
   au!
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   au FileType make setlocal noexpandtab
 augroup end
 

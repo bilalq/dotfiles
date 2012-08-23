@@ -8,7 +8,7 @@ URxvt*scrollBar:false
 
 emacs*cursorColor: Orchid
 
-!Pseudo-trasparency settings: 
+!Pseudo-trasparency settings:
 !URxvt*inheritPixmap:true
 !URxvt*tintColor:white
 !URxvt*shading:40
