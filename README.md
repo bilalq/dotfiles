@@ -17,8 +17,14 @@ are using an older version of git, run this command:
 
     rake up
 
+From here, you can install whatever tickles your fancy. For example:
+
+    rake vim 
+    rake misc
+    #etc...
+
 You'll also need to download a patched font for powerline if you want the fancy
-symbols. That's optional though. 
+symbols in Vim. That's optional though. 
 
 ##Awesome Customizations##
 * Modified order of layouts
