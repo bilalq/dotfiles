@@ -1,12 +1,13 @@
 #ls aliases and such
-alias ls='ls --color=auto'
-alias ls='ls -G'
+#alias ls='ls --color=auto' #For Ubuntu
+alias ls='ls -G' #For OSX
 alias l=ls
 alias s=ls
 alias ll="ls -lh"
 alias la="ls -alh"
 alias lsd='ls -Gal | grep ^d'
-alias lf='ls -l | grep ^d'
+alias lf='ls -Gl | grep ^d'
+alias grep="grep --color=always"
 
 #convenience
 alias bmod='vim ~/.bashrc'
@@ -16,6 +17,7 @@ alias vmod='vim ~/.vimrc'
 alias vi='vim'
 alias v='vim'
 alias c='clear'
+alias cl="clear;ls"
 alias ..='cd ..'
 #alias vgacheck="sudo cat /sys/kernel/debug/vgaswitcheroo/switch"
 #alias apacherestart="sudo service apache2 restart"

@@ -7,7 +7,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTIGNORE=?:??:vim:doc:vmod:bmod:bsave:alt:lsd:tmux
+HISTIGNORE=?:??:???:vmod:bmod:bsave:tmux
 
 
 #Export statements
@@ -19,7 +19,6 @@ export NUM_CPUS=8
 
 
 #Sourcing other scripts
-source ~/.rvm/scripts/rvm
 source ~/.bash_aliases
 
 
