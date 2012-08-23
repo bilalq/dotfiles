@@ -71,6 +71,7 @@ nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>jb  :JekyllBuild<CR>
 nnoremap <Leader>jn  :JekyllPost<CR>
 nnoremap <Leader>jl  :JekyllList<CR>
+nnoremap <Leader>= YpVr=
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
