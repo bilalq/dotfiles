@@ -37,6 +37,8 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set smarttab
+vnoremap < <gv
+vnoremap > >gv
 
 "Statusline settings"
 set laststatus=2
@@ -46,6 +48,7 @@ call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 "Convenience mappings"
 inoremap jj <Esc>`^
 inoremap JJ <Esc>`^
+vnoremap ,, <Esc>
 cnoremap w!! %!sudo tee > /dev/null %
 
 "Reasonable line movement"
@@ -72,6 +75,7 @@ nnoremap <Leader>jb  :JekyllBuild<CR>
 nnoremap <Leader>jn  :JekyllPost<CR>
 nnoremap <Leader>jl  :JekyllList<CR>
 nnoremap <Leader>= YpVr=
+nnoremap <Leader>- :%s/\v +$//g<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
