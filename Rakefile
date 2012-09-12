@@ -1,13 +1,11 @@
 require 'rake'
 
 task :init do
-  sh "git submodule init"
-  sh "git submodule update"
-  sh "git submodule foreach git pull"
+  git submodule init
+  git submodule update
 end
 
 task :up do
-  sh "git submodule update"
   sh "git submodule foreach git pull"
 end
 
