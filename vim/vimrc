@@ -37,8 +37,6 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set smarttab
-vnoremap < <gv
-vnoremap > >gv
 
 "Statusline settings"
 set laststatus=2
