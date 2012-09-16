@@ -89,3 +89,6 @@
 [submodule "vim/vim/bundle/ruby-matchit"]
 	path = vim/vim/bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit.git
+[submodule "vim/vim/bundle/gundo"]
+	path = vim/vim/bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
