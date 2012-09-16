@@ -86,3 +86,6 @@
   path = vim/vim/bundle/DiffSince
   url = https://github.com/bilalq/DiffSince.git
   ignore=dirty
+[submodule "vim/vim/bundle/ruby-matchit"]
+	path = vim/vim/bundle/ruby-matchit
+	url = https://github.com/vim-scripts/ruby-matchit.git
