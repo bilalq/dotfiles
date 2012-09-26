@@ -3,9 +3,8 @@ set nocompatible
 syntax on
 call pathogen#infect()
 set backspace=indent,eol,start
-set wildignore+=*/tmp/*,*/build/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*
 set virtualedit=onemore
-set history=500
 set number
 set mouse=a
 set pastetoggle=<F2>
@@ -37,6 +36,10 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set smarttab
+
+"History settings"
+set history=500
+nnoremap <F5> :GundoToggle<CR>
 
 "Statusline settings"
 set laststatus=2
@@ -74,6 +77,7 @@ nnoremap <Leader>jn  :JekyllPost<CR>
 nnoremap <Leader>jl  :JekyllList<CR>
 nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v +$//g<CR>
+nnoremap <Leader>h :GundoToggle<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
@@ -83,20 +87,24 @@ inoremap <S-Tab> <Esc><<i
 set noerrorbells visualbell t_vb=
 au GUIEnter * set visualbell t_vb=
 
-"Filetype specific settings"
-augroup typeSpecific
-  au!
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-  au FileType make setlocal noexpandtab
-augroup end
-
 "NERDTree settings"
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-"Jekyll settings"
-let g:jekyll_path = "~/blog"
+"Function highlight anything past the 80th column"
+fun! HighlightOver()
+  highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+  match OverLength /\%81v.\+/
+endfun
+
+"Filetype specific settings"
+augroup typeSpecific
+  au!
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+  au FileType make setlocal noexpandtab
+  au FileType ruby,python,markdown call HighlightOver()
+augroup end
 
 " Show syntax highlighting groups for word under cursor
 function! <SID>SynStack()
