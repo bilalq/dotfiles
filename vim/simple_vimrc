@@ -1,28 +1,46 @@
 "A simple vimrc that I give to people just starting to use Vim."
 
 "Basic settings"
+"=============================================================================="
 set nocompatible "Fixes old Vi bugs"
-syntax on "Turns on syntax highlighting"
-set backspace=indent,eol,start "Makes backspace work"
-set history=200 "Sets undo history size"
+syntax on
+set backspace=2 "Makes backspace work"
+set history=500 "Sets undo history size"
 set ruler "Sets up status bar"
-set number "Turns on line numbering"
-set tabstop=4 "Sets indent size of tabs"
-set shiftwidth=4 "Sets auto-indent size"
 set laststatus=2 "Always keeps the status bar active"
+set number "Turns on line numbering"
+set t_Co=256 "Sets Vim to use 256 colors"
+colorscheme elflord
+
+
+"Indentation settings"
+"=============================================================================="
+set tabstop=4 "Sets display width of tabs"
+set shiftwidth=4 "Sets indentation width"
 set autoindent "Turns on auto-indenting"
 set smartindent "Remembers previous indent when creating new lines"
-set t_Co=256 "Sets terminal to use 256 colors"
-colorscheme elflord "Sets colorscheme to elflord"
+"
+"Choose between tabs and spaces for indentation by uncommenting one of
+"these two. Expand for spaces, noexpand for tabs:"
+"set noexpandtab
+"set expandtab
+"
+set smarttab "Smarter indentation management regardless of tabs/spaces"
 
 
 "Search settings"
+"=============================================================================="
 set hlsearch "Highlights search terms"
 set showmatch "Highlights matching parentheses"
 set ignorecase "Ignores case when searching"
 set smartcase "Unless you put some caps in your search term"
 
 
-"Filetype settings"
-filetype plugin on "Turns on plugin support for specific filetypes"
-filetype indent on "Turns on auto-indenting for specific filetypes"
+"Key mappings"
+"=============================================================================="
+"Use jj instead of escape in insert mode"
+inoremap jj <Esc>`^
+
+
+"Turn on plugin & indentation for specific filetypes"
+filetype plugin indent on
