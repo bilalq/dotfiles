@@ -52,6 +52,7 @@ task :bash do
   begin
     sh "ln -s `pwd`/bash/bashrc ~/.bashrc"
     sh "ln -s `pwd`/bash/bash_aliases ~/.bash_aliases"
+    sh "ln -s `pwd`/bash/bash_prompt ~/.bash_aliases"
   rescue
     puts "=================================================="
     puts "Bash configurations files already exist. Skipping."
