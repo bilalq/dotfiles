@@ -13,6 +13,7 @@ alias grep="grep --color=always"
 alias bmod='vim ~/.bashrc'
 alias bsave='source ~/.bashrc'
 alias alt='vim ~/.bash_aliases'
+alias bpro='vim ~/.bash_prompt'
 alias vmod='vim ~/.vimrc'
 alias vi='vim'
 alias v='vim'
@@ -31,6 +32,7 @@ alias dot='cd ~/Documents/dotfiles;ls'
 #ssh aliases
 alias facade='ssh facade.rutgers.edu'
 alias dream='ssh ps61838.dreamhost.com'
+alias line="ssh 50.116.63.16"
 alias patterns='ssh patterns.rutgers.edu'
 
 # Add an "alert" alias for long running commands.  Use like so:

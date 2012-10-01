@@ -13,15 +13,17 @@ HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 #Export statements
 export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/Documents/android/platform-tools:$HOME/Documents/android/tools
 export EDITOR=vim
-#export PS1="\[\033[G\][\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]]\$ "
-export PS1="[\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]]\$ "
+export PROMPT_DIRTRIM=2
 export NDK_CCACHE=/usr/local/bin/ccache
 export NUM_CPUS=8
 export ANDROID_SDK=/Users/bilalq/Documents/android/
 
 
-#Sourcing other scripts
-source ~/.bash_aliases
+#Source aliases
+source $HOME/.bash_aliases
+
+#Source prompt configuration
+source $HOME/.bash_prompt
 
 
 #Bash completion for OSX
