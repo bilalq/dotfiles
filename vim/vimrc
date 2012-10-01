@@ -4,6 +4,7 @@ syntax on
 call pathogen#infect()
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*
+"set wildignore+=*/Resources/*
 set virtualedit=onemore
 set number
 set mouse=a
@@ -72,11 +73,8 @@ nnoremap <A :tabprevious<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
 nnoremap <Leader>t <Esc>:tabnew<CR>
-nnoremap <Leader>jb  :JekyllBuild<CR>
-nnoremap <Leader>jn  :JekyllPost<CR>
-nnoremap <Leader>jl  :JekyllList<CR>
 nnoremap <Leader>= YpVr=
-nnoremap <Leader>- :%s/\v +$//g<CR>
+nnoremap <Leader>- :%s/\v +$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR>
 
 "Shift-tab reverse-indenting"
@@ -101,9 +99,10 @@ endfun
 "Filetype specific settings"
 augroup typeSpecific
   au!
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+  au FileType html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   au FileType make setlocal noexpandtab
-  au FileType ruby,python,markdown call HighlightOver()
+  au FileType markdown call HighlightOver()
+  au BufNewFile,BufRead *.tss set ft=javascript
 augroup end
 
 " Show syntax highlighting groups for word under cursor
