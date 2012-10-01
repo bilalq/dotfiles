@@ -10,10 +10,6 @@
   path = vim/vim/bundle/closetag.vim
   url = https://github.com/vim-scripts/closetag.vim.git
   ignore = dirty
-[submodule "vim/vim/bundle/jekyll.vim"]
-  path = vim/vim/bundle/jekyll.vim
-  url = https://github.com/csexton/jekyll.vim.git
-  ignore = dirty
 [submodule "vim/vim/bundle/nerdtree"]
   path = vim/vim/bundle/nerdtree
   url = https://github.com/scrooloose/nerdtree.git
