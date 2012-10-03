@@ -23,24 +23,24 @@ fi
 # add an else if or two here if you want to get more specific
 if [[ ${git_status} =~ ${remote_pattern} ]]; then
   if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-    remote="${LIGHT_RED}↑"
+    remote="${LIGHT_GREEN}↑"
   else
-    remote="${LIGHT_RED}↓"
+    remote="${LIGHT_GREEN}↓"
   fi
 fi
 if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-  remote="${LIGHT_RED}↕"
+  remote="${LIGHT_GREEN}↕"
 fi
 if [[ ${git_status} =~ ${branch_pattern} ]]; then
   branch=${BASH_REMATCH[1]}
-  echo " (${branch})${remote}${state}"
+  echo " ⭠ ${branch}${remote}${state}"
 fi
 }
 
 function prompt_func() {
   previous_return_value=$?;
   # prompt="${TITLEBAR}$BLUE[$RED\w$GREEN$(__git_ps1)$YELLOW$(git_dirty_flag)$BLUE]$COLOR_NONE "
-  prompt="${TITLEBAR}${BLUE}[${LIGHT_GREEN}\u:${BLUE}\w${LIGHT_RED}$(parse_git_branch)${BLUE}]${COLOR_NONE} "
+  prompt="${TITLEBAR}${BLUE}[${BLUE}\w${LIGHT_GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE} "
   if test $previous_return_value -eq 0
   then
     PS1="${prompt}➔ "

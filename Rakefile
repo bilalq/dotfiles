@@ -1,8 +1,8 @@
 require 'rake'
 
 task :init do
-  git submodule init
-  git submodule update
+  sh "git submodule init"
+  sh "git submodule update"
 end
 
 task :up do
@@ -85,6 +85,7 @@ task :clean do
     "gvimrc",
     "bashrc",
     "bash_aliases",
+    "bash_prompt",
     "jshintrc",
     "inputrc",
     "irbrc",
