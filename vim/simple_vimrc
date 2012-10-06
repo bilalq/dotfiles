@@ -42,5 +42,5 @@ set smartcase "Unless you put some caps in your search term"
 inoremap jj <Esc>`^
 
 
-"Turn on plugin & indentation for specific filetypes"
+"Turn on plugin & indentation support for specific filetypes"
 filetype plugin indent on
