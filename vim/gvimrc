@@ -7,7 +7,7 @@ function! BackgroundToggle()
 endfunction
 
 set background=light
-colorscheme solarized
+colorscheme autumn
 nnoremap <F7> :call BackgroundToggle()<CR>
 let g:Powerline_theme='skwp'
 let g:Powerline_colorscheme='skwp'
