@@ -1,3 +1,7 @@
+# Variables referencing paths
+BLOGPATH=$HOME/Documents/blog/source/_posts
+CSHOMEWORK=$HOME/Documents/homework/214/pa2
+
 #ls aliases and such
 #alias ls='ls --color=auto' #For Ubuntu
 alias ls='ls -G' #For OSX
@@ -20,21 +24,21 @@ alias v='vim'
 alias c='clear'
 alias cl="clear;ls"
 alias ..='cd ..'
-#alias vgacheck="sudo cat /sys/kernel/debug/vgaswitcheroo/switch"
-#alias apacherestart="sudo service apache2 restart"
 alias tmux="tmux -2"
 
 #moving around
 alias me='cd ~/;ls'
 alias doc='cd ~/Documents/;ls'
 alias dot='cd ~/Documents/dotfiles;ls'
+alias cs='cd $CSHOMEWORK;ls'
+alias blog='cd $BLOGPATH;ll'
 
 #ssh aliases
 alias facade='ssh facade.rutgers.edu'
 alias dream='ssh ps61838.dreamhost.com'
-alias line="ssh 50.116.63.16"
+alias line='ssh 50.116.63.16'
 alias patterns='ssh patterns.rutgers.edu'
+alias alpha='ssh alpha.www.cs.rutgers.edu'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#Laravel aliases
+alias bob="php artisan bob::build"
