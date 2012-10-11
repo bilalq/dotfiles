@@ -13,7 +13,6 @@ HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 #Export statements
 export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/Documents/android/platform-tools:$HOME/Documents/android/tools
 export EDITOR=vim
-export PROMPT_DIRTRIM=2
 export NDK_CCACHE=/usr/local/bin/ccache
 export NUM_CPUS=8
 export ANDROID_SDK=/Users/bilalq/Documents/android/
