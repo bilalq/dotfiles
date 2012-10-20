@@ -191,3 +191,9 @@ hi javascriptNumber   guifg=#B3EBBF ctermfg=151 gui=none ctermfg=208
 
 " Annoy fellow Vim users by enforcing these indentation rules.
 " vim: set tw=80 shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
+" Custom settings by Bilal Quadri
+hi Normal ctermbg=NONE
+hi LineNr ctermbg=NONE
+hi NonText ctermbg=NONE
+
