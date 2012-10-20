@@ -18,12 +18,9 @@ export NUM_CPUS=8
 export ANDROID_SDK=/Users/bilalq/Documents/android/
 
 
-#Source aliases
+#Source aliases & prompt configuration
 source $HOME/.bash_aliases
-
-#Source prompt configuration
 source $HOME/.bash_prompt
-
 
 #Bash completion for OSX
 if [ -f `brew --prefix`/etc/bash_completion ]; then
