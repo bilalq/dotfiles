@@ -4,13 +4,12 @@ syntax on
 call pathogen#infect()
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*.a
-"set wildignore+=*/Resources/*
 set virtualedit=onemore
 set number
 set mouse=a
 set pastetoggle=<F2>
 set t_Co=256
-colorscheme jellybeans
+colorscheme autumn
 filetype plugin indent on
 
 "Colorscheme toggling"
