@@ -9,7 +9,7 @@ set number
 set mouse=a
 set pastetoggle=<F2>
 set t_Co=256
-colorscheme autumn
+colorscheme jellybeans
 filetype plugin indent on
 
 "Colorscheme toggling"
@@ -39,7 +39,6 @@ set smarttab
 
 "History settings"
 set history=500
-nnoremap <F5> :GundoToggle<CR>
 
 "Statusline settings"
 set laststatus=2
@@ -89,12 +88,6 @@ let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-"Function highlight anything past the 80th column"
-fun! HighlightOver()
-  highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-  match OverLength /\%81v.\+/
-endfun
-
 "Filetype specific settings"
 augroup typeSpecific
   au!
@@ -103,12 +96,3 @@ augroup typeSpecific
   au FileType markdown call HighlightOver()
   au BufNewFile,BufRead *.tss set ft=javascript
 augroup end
-
-" Show syntax highlighting groups for word under cursor
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-nnoremap <C-S-N> :call <SID>SynStack()<CR>
