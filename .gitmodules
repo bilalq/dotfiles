@@ -85,21 +85,20 @@
 [submodule "vim/vim/bundle/ruby-matchit"]
 	path = vim/vim/bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit.git
+  ignore=dirty
 [submodule "vim/vim/bundle/gundo"]
 	path = vim/vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
+  ignore=dirty
 [submodule "vim/vim/bundle/blade"]
 	path = vim/vim/bundle/blade
 	url = https://github.com/johnhamelink/blade.vim.git
+  ignore=dirty
 [submodule "vim/vim/bundle/html_annoyance"]
 	path = vim/vim/bundle/html_annoyance
 	url = https://github.com/tudorprodan/html_annoyance.vim.git
-[submodule "vim/vim/bundle/indentHtml"]
-	path = vim/vim/bundle/indentHtml
-	url = https://github.com/vim-scripts/indenthtml.vim.git
+  ignore=dirty
 [submodule "vim/vim/bundle/jade"]
 	path = vim/vim/bundle/jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "vim/vim/bundle/vimroom"]
-	path = vim/vim/bundle/vimroom
-	url = https://github.com/mikewest/vimroom.git
+  ignore=dirty
