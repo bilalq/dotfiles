@@ -88,11 +88,15 @@ let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
+"LaTeX Settings"
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+
 "Filetype specific settings"
 augroup typeSpecific
   au!
   au FileType html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   au FileType make setlocal noexpandtab
   au FileType markdown call HighlightOver()
-  au BufNewFile,BufRead *.tss set ft=javascript
-augroup end
+  au BufNewFile,BufRead *.tss set ft=javascript.titanium
+augroup en

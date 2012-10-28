@@ -102,3 +102,9 @@
 	path = vim/vim/bundle/jade
 	url = https://github.com/digitaltoad/vim-jade.git
   ignore=dirty
+[submodule "vim/vim/bundle/css3-syntax"]
+	path = vim/vim/bundle/css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "vim/vim/bundle/latex"]
+	path = vim/vim/bundle/latex
+	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
