@@ -1,6 +1,6 @@
 # Variables referencing paths
 BLOGPATH=$HOME/Documents/blog/source/_posts
-CSHOMEWORK=$HOME/Documents/homework/214/pa2
+CSHOMEWORK=$HOME/Documents/homework/214/pa3
 
 #ls aliases and such
 #alias ls='ls --color=auto' #For Ubuntu
