@@ -1,7 +1,8 @@
 "A simple vimrc that I give to people just starting to use Vim."
+"Lines beginning with a double quote are comments."
 
 "Basic settings"
-"=============================================================================="
+"======================================================================="
 set nocompatible "Fixes old Vi bugs"
 syntax on
 set backspace=2 "Makes backspace work"
@@ -14,7 +15,7 @@ colorscheme elflord
 
 
 "Indentation settings"
-"=============================================================================="
+"======================================================================="
 set tabstop=4 "Sets display width of tabs"
 set shiftwidth=4 "Sets indentation width"
 set autoindent "Turns on auto-indenting"
@@ -29,7 +30,7 @@ set smarttab "Smarter indentation management regardless of tabs/spaces"
 
 
 "Search settings"
-"=============================================================================="
+"======================================================================="
 set hlsearch "Highlights search terms"
 set showmatch "Highlights matching parentheses"
 set ignorecase "Ignores case when searching"
@@ -37,7 +38,7 @@ set smartcase "Unless you put some caps in your search term"
 
 
 "Key mappings"
-"=============================================================================="
+"======================================================================="
 "Use jj instead of escape in insert mode"
 inoremap jj <Esc>`^
 
