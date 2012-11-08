@@ -1,0 +1,10 @@
+" Key Mappings "
+imap jj <Esc>
+nmap <Space> <C-d>
+nmap n nzz
+nmap N Nzz
+
+" Search Settings "
+set incsearch
+set ignorecase
+set smartcase
