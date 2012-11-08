@@ -32,6 +32,7 @@ alias doc='cd ~/Documents/;ls'
 alias dot='cd ~/Documents/dotfiles;ls'
 alias cs='cd $CSHOMEWORK;ls'
 alias blog='cd $BLOGPATH;tree'
+alias gm='cd ~/Documents/game-on/app;ls'
 
 #ssh aliases
 alias facade='ssh facade.rutgers.edu'

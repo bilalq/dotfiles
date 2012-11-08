@@ -13,6 +13,7 @@ task :vim do
   begin
     sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
     sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
+    sh "ln -s `pwd`/vim/xvimrc ~/.xvimrc"
     sh "ln -s `pwd`/vim/vim ~/.vim"
   rescue
     puts "================================================"
@@ -83,6 +84,7 @@ task :clean do
     "vim",
     "vimrc",
     "gvimrc",
+    "xvimrc",
     "bashrc",
     "bash_aliases",
     "bash_prompt",
