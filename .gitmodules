@@ -108,3 +108,6 @@
 [submodule "vim/vim/bundle/latex"]
 	path = vim/vim/bundle/latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+[submodule "vim/vim/bundle/scala"]
+	path = vim/vim/bundle/scala
+	url = https://github.com/derekwyatt/vim-scala.git
