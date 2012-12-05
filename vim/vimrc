@@ -76,6 +76,7 @@ nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v +$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR>
+nnoremap <Leader>" :call DecodeQuotes()<CR>
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<

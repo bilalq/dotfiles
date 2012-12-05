@@ -1,4 +1,4 @@
-""" FocusMode """
+"FocusMode"
 function! ToggleFocusMode()
   if (&foldcolumn != 12)
     set laststatus=0
@@ -19,7 +19,7 @@ endfunc
 nnoremap <F1> :call ToggleFocusMode()<cr>
 
 
-""" Show syntax highlighting groups for word under cursor """
+"Show syntax highlighting groups for word under cursor"
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -30,7 +30,14 @@ nnoremap <C-S-N> :call <SID>SynStack()<CR>
 
 
 "Function highlight anything past the 80th column"
-fun! HighlightOver()
+function! HighlightOver()
   highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
   match OverLength /\%81v.\+/
-endfun
+endfunc
+
+
+"Turn directional quotes into not-directional quotes"
+function! DecodeQuotes()
+  execute ":%s/‘\|’/'/g"
+  execute ':%s/“\|”/"/g'
+endfunc
