@@ -13,9 +13,16 @@ HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 #Export statements
 export PATH=$HOME/.cabal/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/Documents/android/platform-tools:$HOME/Documents/android/tools
 export EDITOR=vim
-export NDK_CCACHE=/usr/local/bin/ccache
 export NUM_CPUS=8
+
+
+#Android settings
+export NDK_CCACHE=/usr/local/bin/ccache
+export ANDROID_NDK=/Users/bilalq/Documents/android/android-ndk-r8c
 export ANDROID_SDK=/Users/bilalq/Documents/android/
+
+
+#Ruby optimizations
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -26,6 +33,7 @@ export RUBY_HEAP_FREE_MIN=500000
 #Source aliases & prompt configuration
 source $HOME/.bash_aliases
 source $HOME/.bash_prompt
+
 
 #Bash completion for OSX
 if [ -f `brew --prefix`/etc/bash_completion ]; then
