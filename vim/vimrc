@@ -54,8 +54,8 @@ vnoremap ,, <Esc>
 cnoremap w!! %!sudo tee > /dev/null %
 
 "Reasonable line movement"
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
@@ -90,6 +90,7 @@ au GUIEnter * set visualbell t_vb=
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+"autocmd vimenter * if !argc() | NERDTree | endif
 
 "LaTeX Settings"
 let g:tex_flavor='latex'
@@ -103,4 +104,4 @@ augroup typeSpecific
   au FileType make setlocal noexpandtab
   au FileType markdown call HighlightOver()
   au BufNewFile,BufRead *.tss set ft=javascript.titanium
-augroup en
+augroup end
