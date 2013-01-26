@@ -74,7 +74,7 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
 nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>= YpVr=
-nnoremap <Leader>- :%s/\v +$//g<CR>i<Esc>``
+nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR>
 nnoremap <Leader>" :call DecodeQuotes()<CR>
 
