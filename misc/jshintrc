@@ -1,9 +1,10 @@
 {
-  "maxerr"    : 10,       //Only report first 10 errors
-  "es5"       : true,     //Use ECMAScript 5 rules
-  "laxcomma"  : true,     //Allow comma-first style
-  "bitwise"   : true,     //Don't allow bitwise operators
-  "curly"     : true,      //Require curly braces around loops and conditionals
-  "sub"       : true      //Suppress warnings about using [] notation
+  "maxerr"    : 10,       // Only report first 10 errors
+  "es5"       : true,     // Use ECMAScript 5 rules
+  "laxcomma"  : true,     // Allow comma-first style
+  "bitwise"   : true,     // Don't allow bitwise operators
+  "curly"     : true,     // Require curly braces around loops and conditionals
+  "sub"       : true      // Suppress warnings about using [] notation
+  "expr"      : true      // Be quiet about ternaries calling expressions
 }
 // vim: filetype=javascript
