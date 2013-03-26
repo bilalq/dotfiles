@@ -15,14 +15,11 @@ filetype plugin indent on
 syntax on
 set background=dark
 set t_Co=256
-let g:badwolf_darkgutter = 0
-let g:badwolf_css_props_highlight = 1
-let g:badwolf_tabline = 1
-let g:badwolf_html_link_underline = 1
+let g:badwolf_darkgutter=0
+let g:badwolf_css_props_highlight=1
+let g:badwolf_tabline=1
+let g:badwolf_html_link_underline=1
 colorscheme badwolf
-noremap <F8> :colorscheme badwolf<CR>
-noremap <F9> :colorscheme jellybeans<CR>
-noremap <F10> :colorscheme autumn<CR>
 
 "Search settings"
 set hlsearch
