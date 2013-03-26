@@ -11,7 +11,7 @@ HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 
 
 #Export statements
-export PATH=$HOME/.cabal/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/Documents/android/platform-tools:$HOME/Documents/android/tools
+export PATH=$HOME/.cabal/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/Documents/android/platform-tools:$HOME/Documents/android/tools:./vendor/bin:$HOME/.apigen
 export EDITOR=vim
 export NUM_CPUS=8
 

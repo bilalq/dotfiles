@@ -1,6 +1,6 @@
 # Variables referencing paths
 BLOGPATH=$HOME/Documents/blog/source/_posts
-CSHOMEWORK=$HOME/Documents/homework/214/pa3
+CSHOMEWORK=$HOME/Documents/homework/214/pa6
 
 #ls aliases and such
 #alias ls='ls --color=auto' #For Ubuntu
@@ -9,8 +9,8 @@ alias l=ls
 alias s=ls
 alias ll="ls -lh"
 alias la="ls -alh"
-alias lsd='ls -Gal | grep ^d'
-alias lf='ls -Gl | grep ^d'
+alias lsd='ls -Galh | grep ^d'
+alias lf='ls -Glh | grep ^d'
 alias grep="grep --color=always"
 
 #convenience
@@ -30,6 +30,7 @@ alias tmux="tmux -2"
 alias me='cd ~/;ls'
 alias doc='cd ~/Documents/;ls'
 alias dot='cd ~/Documents/dotfiles;ls'
+alias si='cd ~/Sites;ls'
 alias cs='cd $CSHOMEWORK;ls'
 alias blog='cd $BLOGPATH;tree'
 alias gm='cd ~/Documents/game-on/app;ls'
@@ -43,3 +44,4 @@ alias alpha='ssh alpha.www.cs.rutgers.edu'
 
 #Laravel aliases
 alias bob="php artisan bob::build"
+alias art="php artisan"

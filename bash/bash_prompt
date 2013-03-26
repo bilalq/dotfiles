@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PROMPT_DIRTRIM=2
+export GIT_PS1_SHOWDIRTYSTATE=true
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
