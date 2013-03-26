@@ -90,10 +90,6 @@
 	path = vim/vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
   ignore=dirty
-[submodule "vim/vim/bundle/blade"]
-	path = vim/vim/bundle/blade
-	url = https://github.com/johnhamelink/blade.vim.git
-  ignore=dirty
 [submodule "vim/vim/bundle/html_annoyance"]
 	path = vim/vim/bundle/html_annoyance
 	url = https://github.com/tudorprodan/html_annoyance.vim.git
@@ -111,3 +107,7 @@
 [submodule "vim/vim/bundle/scala"]
 	path = vim/vim/bundle/scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "vim/vim/bundle/blade"]
+	path = vim/vim/bundle/blade
+	url = git@github.com:bilalq/blade.vim.git
+  ignore=dirty
