@@ -1,3 +1,4 @@
+# vim: ft=sh
 # Variables referencing paths
 BLOGPATH=$HOME/Documents/blog/source/_posts
 CSHOMEWORK=$HOME/Documents/homework/214/pa6

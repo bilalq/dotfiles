@@ -1,3 +1,4 @@
+# vim: ft=sh
 #export statements
 export LD_LIBRARY_PATH=/filer/tmp2/contrib/lib:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=/filer/tmp2/contrib/include:$C_INCLUDE_PATH
