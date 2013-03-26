@@ -79,7 +79,7 @@ nnoremap <Leader>D :NERDTreeFind<CR>
 nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
-nnoremap <Leader>h :GundoToggle<CR>
+nnoremap <Leader>h :GundoToggle<CR><CR>
 nnoremap <Leader>" :call DecodeQuotes()<CR>
 
 "Shift-tab reverse-indenting"
@@ -89,6 +89,9 @@ inoremap <S-Tab> <Esc><<i
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
 au GUIEnter * set visualbell t_vb=
+
+"Gundo Settings"
+let g:gundo_close_on_revert=1
 
 "NERDTree settings"
 let NERDTreeIgnore=['\.pyc$', '\~$', '\.rbc$']
