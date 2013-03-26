@@ -12,5 +12,10 @@
 [alias]
 	d = difftool
 	co = checkout
+  s = status
   stats = status
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[remote-hg]
+	hg-git-compat = true
+[push]
+	default = simple

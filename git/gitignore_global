@@ -15,9 +15,12 @@ Thumbs.db
 *.dll
 *.o
 *.so
+*.pyc
 
 # Temp files #
 *.swp
 
 # Logs
-logs
+.log
+!logs/.gitignore
+!logs/.gitkeep
