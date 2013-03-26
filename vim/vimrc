@@ -13,8 +13,9 @@ filetype plugin indent on
 
 "Colorscheme Settings"
 syntax on
-set background=dark
+set synmaxcol=800
 set t_Co=256
+set background=dark
 let g:badwolf_darkgutter=0
 let g:badwolf_css_props_highlight=1
 let g:badwolf_tabline=1
@@ -34,9 +35,10 @@ augroup hltoggle
 augroup end
 
 "Indentation settings"
-set expandtab
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
+set expandtab
 set autoindent
 set smartindent
 set smarttab
