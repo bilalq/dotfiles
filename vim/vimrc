@@ -4,7 +4,7 @@ syntax on
 call pathogen#infect()
 call pathogen#helptags()
 set backspace=indent,eol,start
-set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*.a
+set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*.a,*.lock,*.class,*/vendor/*
 set virtualedit=onemore
 set number
 set mouse=a
@@ -54,8 +54,8 @@ vnoremap ,, <Esc>
 cnoremap w!! %!sudo tee > /dev/null %
 
 "Reasonable line movement"
-"nnoremap j gj
-"nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
@@ -102,6 +102,7 @@ augroup typeSpecific
   au!
   au FileType html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   au FileType make setlocal noexpandtab
+  au FileType java setlocal sw=4 ts=4
   au FileType markdown call HighlightOver()
-  au BufNewFile,BufRead *.tss set ft=javascript.titanium
+  au BufNewFile,BufRead *.tss setlocal filetype=javascript.titanium
 augroup end
