@@ -1,13 +1,5 @@
-function! BackgroundToggle()
-  if (&background ==? "dark")
-    set background=light
-  else
-    set background=dark
-  endif
-endfunction
-
-set background=light
-colorscheme autumn
-nnoremap <F7> :call BackgroundToggle()<CR>
-let g:Powerline_theme='skwp'
-let g:Powerline_colorscheme='skwp'
+set guioptions-=T " Hide icons
+set guioptions-=r " Hide scrollbar
+set guioptions-=L " Hide NERDTree scrollbar
+set transparency=15
+au GUIEnter * set visualbell t_vb=

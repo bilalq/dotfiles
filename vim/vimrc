@@ -88,7 +88,6 @@ inoremap <S-Tab> <Esc><<i
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
-au GUIEnter * set visualbell t_vb=
 
 "Gundo Settings"
 let g:gundo_close_on_revert=1
