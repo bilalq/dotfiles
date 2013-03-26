@@ -1,6 +1,5 @@
 "Basic settings"
 set nocompatible
-syntax on
 call pathogen#infect()
 call pathogen#helptags()
 set backspace=indent,eol,start
@@ -10,14 +9,20 @@ set number
 set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
-set t_Co=256
-colorscheme jellybeans
 filetype plugin indent on
 
-"Colorscheme toggling"
-map <F8> :colorscheme jellybeans<CR>
-map <F9> :colorscheme molokai<CR>
-map <F10> :colorscheme autumn<CR>
+"Colorscheme Settings"
+syntax on
+set background=dark
+set t_Co=256
+let g:badwolf_darkgutter = 0
+let g:badwolf_css_props_highlight = 1
+let g:badwolf_tabline = 1
+let g:badwolf_html_link_underline = 1
+colorscheme badwolf
+noremap <F8> :colorscheme badwolf<CR>
+noremap <F9> :colorscheme jellybeans<CR>
+noremap <F10> :colorscheme autumn<CR>
 
 "Search settings"
 set hlsearch

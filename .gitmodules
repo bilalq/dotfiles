@@ -111,3 +111,6 @@
 	path = vim/vim/bundle/blade
 	url = git@github.com:bilalq/blade.vim.git
   ignore=dirty
+[submodule "vim/vim/bundle/badwolf"]
+	path = vim/vim/bundle/badwolf
+	url = git@github.com:sjl/badwolf.git
