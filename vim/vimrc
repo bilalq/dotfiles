@@ -43,9 +43,6 @@ set autoindent
 set smartindent
 set smarttab
 
-"History settings"
-set history=500
-
 "Statusline settings"
 set laststatus=2
 let g:Powerline_symbols='fancy'
@@ -71,27 +68,18 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 
-"Leader Mappings"
-let mapleader=","
-nnoremap <Leader>l :noh<CR>
-nnoremap <Leader>a gt
-nnoremap <A :tabprevious<CR>
-nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>D :NERDTreeFind<CR>
-nnoremap <Leader>t <Esc>:tabnew<CR>
-nnoremap <Leader>= YpVr=
-nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
-nnoremap <Leader>h :GundoToggle<CR><CR>
-nnoremap <Leader>" :call DecodeQuotes()<CR>
-
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
+
+"Resize splits when window is resized"
+au VimResized * :wincmd =
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
 
 "Gundo Settings"
+set history=500
 let g:gundo_close_on_revert=1
 
 "NERDTree settings"
@@ -113,3 +101,16 @@ augroup typeSpecific
   au FileType markdown call HighlightOver()
   au BufNewFile,BufRead *.tss setlocal filetype=javascript.titanium
 augroup end
+
+"Leader Mappings"
+let mapleader=","
+nnoremap <Leader>l :noh<CR>
+nnoremap <Leader>a gt
+nnoremap <A :tabprevious<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>:wincmd =<CR>
+nnoremap <Leader>D :NERDTreeFind<CR>
+nnoremap <Leader>t <Esc>:tabnew<CR>
+nnoremap <Leader>= YpVr=
+nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
+nnoremap <Leader>h :GundoToggle<CR><CR>
+nnoremap <Leader>" :call DecodeQuotes()<CR>
