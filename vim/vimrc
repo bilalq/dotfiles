@@ -46,7 +46,9 @@ set history=500
 
 "Statusline settings"
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols='fancy'
+let g:Powerline_cache_enabled=1
+let g:Powerline_colorscheme='badwolf'
 call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 "Convenience mappings"
@@ -89,10 +91,9 @@ set noerrorbells visualbell t_vb=
 au GUIEnter * set visualbell t_vb=
 
 "NERDTree settings"
-let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
-"autocmd vimenter * if !argc() | NERDTree | endif
 
 "LaTeX Settings"
 let g:tex_flavor='latex'
