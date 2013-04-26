@@ -1,9 +1,10 @@
 # vim: ft=sh
+
 # Variables referencing paths
 BLOGPATH=$HOME/Documents/blog/source/_posts
 CSHOMEWORK=$HOME/Documents/homework/214/pa6
 
-#ls aliases and such
+# ls aliases and such
 #alias ls='ls --color=auto' #For Ubuntu
 alias ls='ls -G' #For OSX
 alias l=ls
@@ -14,7 +15,7 @@ alias lsd='ls -Galh | grep ^d'
 alias lf='ls -Glh | grep ^d'
 alias grep="grep --color=always"
 
-#convenience
+# Convenience
 alias bmod='vim ~/.bashrc'
 alias bsave='source ~/.bashrc'
 alias alt='vim ~/.bash_aliases'
@@ -26,8 +27,9 @@ alias c='clear'
 alias cl="clear;ls"
 alias ..='cd ..'
 alias tmux="tmux -2"
+alias racket="racket -il xrepl"
 
-#moving around
+# Moving around
 alias me='cd ~/;ls'
 alias doc='cd ~/Documents/;ls'
 alias dot='cd ~/Documents/dotfiles;ls'
@@ -36,13 +38,16 @@ alias cs='cd $CSHOMEWORK;ls'
 alias blog='cd $BLOGPATH;tree'
 alias gm='cd ~/Documents/game-on/app;ls'
 
-#ssh aliases
+# SSH aliases
 alias facade='ssh facade.rutgers.edu'
 alias dream='ssh ps61838.dreamhost.com'
 alias line='ssh 50.116.63.16'
 alias patterns='ssh patterns.rutgers.edu'
 alias alpha='ssh alpha.www.cs.rutgers.edu'
 
-#Laravel aliases
+# Laravel aliases
 alias bob="php artisan bob::build"
 alias art="php artisan"
+
+# Cluster aliases
+alias cluster="ssh -p 5152 zooey@128.6.192.166 -L 3333:node1-1:8080"
