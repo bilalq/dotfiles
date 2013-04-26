@@ -9,13 +9,17 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[push]
+  default = simple
+[remote-hg]
+	hg-git-compat = true
 [alias]
 	d = difftool
 	co = checkout
   s = status
   stats = status
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[remote-hg]
-	hg-git-compat = true
-[push]
-	default = simple
+	p = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
