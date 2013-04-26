@@ -114,3 +114,6 @@
 [submodule "vim/vim/bundle/badwolf"]
 	path = vim/vim/bundle/badwolf
 	url = git@github.com:sjl/badwolf.git
+[submodule "vim/vim/bundle/stylus"]
+	path = vim/vim/bundle/stylus
+	url = git@github.com:wavded/vim-stylus.git
