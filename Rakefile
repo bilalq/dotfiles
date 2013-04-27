@@ -14,7 +14,7 @@ task :vim do
     sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
     sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
     sh "ln -s `pwd`/vim/xvimrc ~/.xvimrc"
-    sh "ln -s `pwd`/vim/vim ~/.vim"
+    sh "ln -s `pwd`/vim/bundle ~/.vim"
   rescue
     puts "================================================"
     puts "Vim configuration files already exist. Skipping."
