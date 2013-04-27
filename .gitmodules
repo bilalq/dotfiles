@@ -109,11 +109,11 @@
 	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "vim/vim/bundle/blade"]
 	path = vim/vim/bundle/blade
-	url = git@github.com:bilalq/blade.vim.git
+	url = https://github.com/bilalq/blade.vim.git
   ignore=dirty
 [submodule "vim/vim/bundle/badwolf"]
 	path = vim/vim/bundle/badwolf
-	url = git@github.com:sjl/badwolf.git
+	url = https://github.com/sjl/badwolf.git
 [submodule "vim/vim/bundle/stylus"]
 	path = vim/vim/bundle/stylus
 	url = git@github.com:wavded/vim-stylus.git
