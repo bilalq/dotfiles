@@ -1,7 +1,10 @@
 "Basic settings"
 set nocompatible
-call pathogen#infect()
-call pathogen#helptags()
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype plugin indent on
+
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*.a,*.lock,*.class,*/vendor/*
 set virtualedit=onemore
@@ -9,7 +12,6 @@ set number
 set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
-filetype plugin indent on
 
 "Colorscheme Settings"
 syntax on
