@@ -5,7 +5,7 @@
 #History settings
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=1000
+HISTSIZE=2000
 HISTFILESIZE=2000
 HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 
