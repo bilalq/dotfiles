@@ -11,10 +11,11 @@ end
 
 task :vim do
   begin
+    sh "mkdir -p ~/.vim"
     sh "ln -s `pwd`/vim/vimrc ~/.vimrc"
     sh "ln -s `pwd`/vim/gvimrc ~/.gvimrc"
     sh "ln -s `pwd`/vim/xvimrc ~/.xvimrc"
-    sh "ln -s `pwd`/vim/bundle ~/.vim"
+    sh "ln -s `pwd`/vim/bundle ~/.vim/bundle"
   rescue
     puts "================================================"
     puts "Vim configuration files already exist. Skipping."
