@@ -1,28 +1,58 @@
-"Basic settings"
+"Load bundles"
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'bilalq/jellybeans.vim'
+Bundle 'bilalq/vim-javascript'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'gregsexton/MatchTag'
+Bundle 'evidens/vim-twig'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'msanders/snipmate.vim'
+Bundle 'pekepeke/titanium-vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/badwolf'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-surround'
+Bundle 'wavded/vim-stylus'
+Bundle 'ruby-matchit'
+Bundle 'FredKSchott/CoVim'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'embear/vim-localvimrc'
 filetype plugin indent on
 
+"Basic settings"
 set backspace=indent,eol,start
-set wildignore+=*/tmp/*,*/build/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*.a,*.lock,*.class,*/vendor/*
+set wildmenu
 set virtualedit=onemore
 set number
 set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
+set wildignore+=*/build/*,*.o,*.so,*.swp,*.zip,Gemfile.lock,composer.lock,*.class,*/vendor/*,*/node_modules/*,*.a,
 
 "Colorscheme Settings"
 syntax on
 set synmaxcol=800
 set t_Co=256
-set background=dark
 let g:badwolf_darkgutter=0
 let g:badwolf_css_props_highlight=1
 let g:badwolf_tabline=1
 let g:badwolf_html_link_underline=1
 colorscheme badwolf
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
 
 "Search settings"
 set hlsearch
@@ -41,15 +71,14 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set smarttab
 set autoindent
 set smartindent
-set smarttab
 
 "Statusline settings"
 set laststatus=2
 let g:Powerline_symbols='fancy'
 let g:Powerline_cache_enabled=1
-let g:Powerline_colorscheme='badwolf'
 call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 "Convenience mappings"
@@ -80,7 +109,7 @@ au VimResized * :wincmd =
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
 
-"Gundo Settings"
+"Gundo settings"
 set history=500
 let g:gundo_close_on_revert=1
 
@@ -89,22 +118,32 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '\.rbc$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-"LaTeX Settings"
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_UseMakefile=0
+"Syntastic settings"
+let g:syntastic_mode_map={ 
+\ 'mode': 'active',
+\ 'active_filetypes': [],
+\ 'passive_filetypes': ['html'] 
+\}
+
+"Indent Guide settings"
+let g:indent_guides_auto_colors = 0
+augroup indentGuide
+  au!
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=233
+augroup end
 
 "Filetype specific settings"
 augroup typeSpecific
   au!
-  au FileType html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   au FileType make setlocal noexpandtab
+  au BufNewFile,BufRead *.blade.php setlocal filetype=html.twig
   au FileType java setlocal sw=4 ts=4
-  au FileType markdown call HighlightOver()
+  "au FileType markdown call HighlightOver()
   au BufNewFile,BufRead *.tss setlocal filetype=javascript.titanium
 augroup end
 
-"Leader Mappings"
+"Leader mappings"
 let mapleader=","
 nnoremap <Leader>l :noh<CR>
 nnoremap <Leader>a gt
@@ -116,3 +155,7 @@ nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR><CR>
 nnoremap <Leader>" :call DecodeQuotes()<CR>
+
+"Local vimrc settings"
+let g:localvimrc_sandbox=0
+let g:localvimrc_whitelist='/Users/bilalq/\(Documents\|Sites\)/.*'
