@@ -18,6 +18,9 @@
 	co = checkout
   s = status
   stats = status
+  short = shortlog -s -n
+  pr = pull --rebase
+  gg = rebase --abort
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	p = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
   assume   = update-index --assume-unchanged
