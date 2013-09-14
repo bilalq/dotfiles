@@ -9,11 +9,12 @@ CSHOMEWORK=$HOME/Documents/homework/214/pa6
 alias ls='ls -G' #For OSX
 alias l=ls
 alias s=ls
-alias ll="ls -lh"
-alias la="ls -alh"
+alias ll='ls -lh'
+alias la='ls -alh'
 alias lsd='ls -Galh | grep ^d'
 alias lf='ls -Glh | grep ^d'
-alias grep="grep --color=always"
+alias gls='gls --color=auto'
+alias grep='grep --color=always'
 
 # Convenience
 alias bmod='vim ~/.bashrc'
@@ -24,10 +25,10 @@ alias vmod='vim ~/.vimrc'
 alias vi='vim'
 alias v='vim'
 alias c='clear'
-alias cl="clear;ls"
+alias cl='clear;ls'
 alias ..='cd ..'
-alias tmux="tmux -2"
-alias racket="racket -il xrepl"
+alias tmux='tmux -2'
+alias racket='racket -il xrepl'
 
 # Moving around
 alias me='cd ~/;ls'
@@ -39,15 +40,8 @@ alias blog='cd $BLOGPATH;tree'
 alias gm='cd ~/Documents/game-on/app;ls'
 
 # SSH aliases
-alias facade='ssh facade.rutgers.edu'
-alias dream='ssh ps61838.dreamhost.com'
 alias line='ssh 50.116.63.16'
-alias patterns='ssh patterns.rutgers.edu'
-alias alpha='ssh alpha.www.cs.rutgers.edu'
 
 # Laravel aliases
-alias bob="php artisan bob::build"
-alias art="php artisan"
-
-# Cluster aliases
-alias cluster="ssh -p 5152 zooey@128.6.192.166 -L 3333:node1-1:8080"
+alias bob='php artisan bob::build'
+alias art='php artisan'
