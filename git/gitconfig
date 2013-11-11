@@ -1,28 +1,28 @@
 [user]
-	name = Bilal Quadri
-	email = bilalquadri92@gmail.com
+  name = Bilal Quadri
+  email = bilalquadri92@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [color]
-	ui = true
+  ui = true
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [push]
   default = simple
 [remote-hg]
-	hg-git-compat = true
+  hg-git-compat = true
 [alias]
-	d = difftool
-	co = checkout
+  d = difftool
+  co = checkout
   s = status
   stats = status
   short = shortlog -s -n
   pr = pull --rebase
   gg = rebase --abort
-	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	p = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  p = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
   assume   = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
   assumed  = "!git ls-files -v | grep ^h | cut -c 3-"

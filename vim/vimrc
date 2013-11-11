@@ -3,37 +3,52 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
+
+"Colorschemes"
 Bundle 'bilalq/jellybeans.vim'
-Bundle 'bilalq/vim-javascript'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'gregsexton/MatchTag'
-Bundle 'evidens/vim-twig'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
+Bundle 'junegunn/seoul256.vim'
+Bundle 'sjl/badwolf'
+
+"Features"
+Bundle 'ruby-matchit'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'msanders/snipmate.vim'
-Bundle 'pekepeke/titanium-vim'
+Bundle 'gregsexton/MatchTag'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'embear/vim-localvimrc'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'sjl/badwolf'
+Bundle 'msanders/snipmate.vim'
+Bundle 'FredKSchott/CoVim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-repeat'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
+
+"Language support"
+Bundle 'bilalq/vim-javascript'
+Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
-Bundle 'ruby-matchit'
-Bundle 'FredKSchott/CoVim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'embear/vim-localvimrc'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pekepeke/titanium-vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'xsbeats/vim-blade'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-liquid'
+Bundle 'tpope/vim-haml'
+
 filetype plugin indent on
 
 "Basic settings"
-set backspace=indent,eol,start
+set backspace=2
 set wildmenu
 set virtualedit=onemore
 set number
@@ -50,9 +65,15 @@ let g:badwolf_darkgutter=0
 let g:badwolf_css_props_highlight=1
 let g:badwolf_tabline=1
 let g:badwolf_html_link_underline=1
-colorscheme badwolf
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
+colorscheme seoul256
+hi NonText ctermfg=bg
+if &diff
+  colorscheme jellybeans
+endif
+augroup diffopen
+  au!
+  au FilterWritePre * if &diff | colorscheme jellybeans | endif
+augroup end
 
 "Search settings"
 set hlsearch
@@ -119,29 +140,36 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
 "Syntastic settings"
-let g:syntastic_mode_map={ 
+let g:syntastic_mode_map={
 \ 'mode': 'active',
 \ 'active_filetypes': [],
-\ 'passive_filetypes': ['html'] 
+\ 'passive_filetypes': ['html']
 \}
 
 "Indent Guide settings"
 let g:indent_guides_auto_colors = 0
 augroup indentGuide
   au!
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=233
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=237
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 augroup end
 
 "Filetype specific settings"
 augroup typeSpecific
   au!
   au FileType make setlocal noexpandtab
-  au BufNewFile,BufRead *.blade.php setlocal filetype=html.twig
   au FileType java setlocal sw=4 ts=4
-  "au FileType markdown call HighlightOver()
+  au FileType blade setlocal filetype=blade.html
+  au FileType blade hi htmlError ctermfg=186
+  "au FileType blade hi htmlError ctermfg=169 ctermbg=none "Badwolf
   au BufNewFile,BufRead *.tss setlocal filetype=javascript.titanium
 augroup end
+
+"YouCompleteMe settings"
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
 
 "Leader mappings"
 let mapleader=","
