@@ -28,6 +28,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
+Bundle 'mileszs/ack.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 
@@ -183,6 +184,7 @@ nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR><CR>
 nnoremap <Leader>" :call DecodeQuotes()<CR>
+nnoremap <Leader>f :Ack -i 
 
 "Local vimrc settings"
 let g:localvimrc_sandbox=0
