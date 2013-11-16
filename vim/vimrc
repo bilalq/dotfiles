@@ -31,6 +31,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'mileszs/ack.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 "Language support"
 Bundle 'bilalq/vim-javascript'
@@ -56,6 +57,7 @@ set number
 set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
+set clipboard=unnamed
 set wildignore+=*/build/*,*.o,*.so,*.swp,*.zip,Gemfile.lock,composer.lock,*.class,*/vendor/*,*/node_modules/*,*.a,
 
 "Colorscheme Settings"
@@ -114,12 +116,6 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-
-"Window movement mappings"
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
 
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
