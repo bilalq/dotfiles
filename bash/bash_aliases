@@ -1,9 +1,5 @@
 # vim: ft=sh
 
-# Variables referencing paths
-BLOGPATH=$HOME/Documents/blog/source/_posts
-CSHOMEWORK=$HOME/Documents/homework/214/pa6
-
 # ls aliases and such
 #alias ls='ls --color=auto' #For Ubuntu
 alias ls='ls -G' #For OSX
@@ -32,16 +28,12 @@ alias racket='racket -il xrepl'
 
 # Moving around
 alias me='cd ~/;ls'
-alias doc='cd ~/Documents/;ls'
-alias dot='cd ~/Documents/dotfiles;ls'
-alias si='cd ~/Sites;ls'
-alias cs='cd $CSHOMEWORK;ls'
-alias blog='cd $BLOGPATH;tree'
-alias gm='cd ~/Documents/game-on/app;ls'
+alias doc='cd ~/Documents/ && ls'
+alias dot='cd ~/Documents/dotfiles && ls'
+alias si='cd ~/Sites && ls'
 
 # SSH aliases
-alias line='ssh 50.116.63.16'
+alias line='ssh villustrator.com'
 
 # Laravel aliases
-alias bob='php artisan bob::build'
 alias art='php artisan'

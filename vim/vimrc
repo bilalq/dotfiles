@@ -32,6 +32,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'mtth/scratch.vim'
+Bundle 'bilalq/lite-dfm'
 
 "Language support"
 Bundle 'bilalq/vim-javascript'
@@ -181,6 +183,8 @@ nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR><CR>
 nnoremap <Leader>" :call DecodeQuotes()<CR>
 nnoremap <Leader>f :Ack -i 
+nnoremap <Leader>s :ScratchInsert<CR>
+nnoremap <Leader>z :LiteDFMToggle<CR>i<Esc>`^
 
 "Local vimrc settings"
 let g:localvimrc_sandbox=0
