@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bilalq/jellybeans.vim'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'sjl/badwolf'
+Bundle 'tomasr/molokai'
 
 "Features"
 Bundle 'ruby-matchit'
@@ -28,12 +29,16 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'mtth/scratch.vim'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'bilalq/lite-dfm'
+Bundle 'junegunn/goyo.vim'
+
 
 "Language support"
 Bundle 'bilalq/vim-javascript'
@@ -59,6 +64,7 @@ set number
 set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
+set scrolloff=3
 set clipboard=unnamed
 set wildignore+=*/build/*,*.o,*.so,*.swp,*.zip,Gemfile.lock,composer.lock,*.class,*/vendor/*,*/node_modules/*,*.a,
 
@@ -66,14 +72,12 @@ set wildignore+=*/build/*,*.o,*.so,*.swp,*.zip,Gemfile.lock,composer.lock,*.clas
 syntax on
 set synmaxcol=800
 set t_Co=256
-let g:badwolf_darkgutter=0
-let g:badwolf_css_props_highlight=1
-let g:badwolf_tabline=1
-let g:badwolf_html_link_underline=1
+let g:seoul256_background=237
 colorscheme seoul256
 hi NonText ctermfg=bg
 if &diff
   colorscheme jellybeans
+  let g:lite_dfm_normal_bg_cterm=237
 endif
 augroup diffopen
   au!
@@ -119,6 +123,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+"Repurpose K to search for word under cursor"
+nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 "Shift-tab reverse-indenting"
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
@@ -145,6 +152,10 @@ let g:syntastic_mode_map={
 \ 'passive_filetypes': ['html']
 \}
 
+"CtrlP settings"
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
 "Indent Guide settings"
 let g:indent_guides_auto_colors = 0
 augroup indentGuide
@@ -160,8 +171,6 @@ augroup typeSpecific
   au FileType java setlocal sw=4 ts=4
   au FileType blade setlocal filetype=blade.html
   au FileType blade hi htmlError ctermfg=186
-  "au FileType blade hi htmlError ctermfg=169 ctermbg=none "Badwolf
-  au BufNewFile,BufRead *.tss setlocal filetype=javascript.titanium
 augroup end
 
 "YouCompleteMe settings"
@@ -169,6 +178,9 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+
+"LiteDFM settings"
+let g:lite_dfm_keep_ruler=1
 
 "Leader mappings"
 let mapleader=","
@@ -181,10 +193,12 @@ nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>= YpVr=
 nnoremap <Leader>- :%s/\v[ \t]+$//g<CR>i<Esc>``
 nnoremap <Leader>h :GundoToggle<CR><CR>
-nnoremap <Leader>" :call DecodeQuotes()<CR>
-nnoremap <Leader>f :Ack -i 
+nnoremap <Leader>f :Ag -i 
 nnoremap <Leader>s :ScratchInsert<CR>
 nnoremap <Leader>z :LiteDFMToggle<CR>i<Esc>`^
+nnoremap <Leader>Z :LiteDFMToggle<CR>:silent !tmux set status > /dev/null 2>&1<CR>:redraw!<CR>
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>b :Tagbar<cr>
 
 "Local vimrc settings"
 let g:localvimrc_sandbox=0

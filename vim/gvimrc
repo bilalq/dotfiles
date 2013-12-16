@@ -1,5 +1,5 @@
 set guioptions-=T " Hide icons
 set guioptions-=r " Hide scrollbar
 set guioptions-=L " Hide NERDTree scrollbar
-set transparency=15
+set transparency=5
 au GUIEnter * set visualbell t_vb=
