@@ -21,7 +21,6 @@ Bundle 'embear/vim-localvimrc'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'msanders/snipmate.vim'
 Bundle 'FredKSchott/CoVim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
@@ -38,10 +37,16 @@ Bundle 'mtth/scratch.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bilalq/lite-dfm'
 Bundle 'junegunn/goyo.vim'
-
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+Bundle 'AndrewRadev/linediff.vim'
+"Bundle 'othree/javascript-libraries-syntax.vim'
 
 "Language support"
 Bundle 'bilalq/vim-javascript'
+Bundle 'elzr/vim-json'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 Bundle 'kchmck/vim-coffee-script'
@@ -53,6 +58,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on
 
@@ -65,6 +71,7 @@ set mouse=a
 set shortmess=I
 set pastetoggle=<F2>
 set scrolloff=3
+set sidescrolloff=3
 set clipboard=unnamed
 set wildignore+=*/build/*,*.o,*.so,*.swp,*.zip,Gemfile.lock,composer.lock,*.class,*/vendor/*,*/node_modules/*,*.a,
 
@@ -73,15 +80,19 @@ syntax on
 set synmaxcol=800
 set t_Co=256
 let g:seoul256_background=237
+"colorscheme seoul256
 colorscheme seoul256
 hi NonText ctermfg=bg
+if g:colors_name == 'tron'
+  hi LineNr ctermbg=none
+endif
 if &diff
   colorscheme jellybeans
   let g:lite_dfm_normal_bg_cterm=237
 endif
 augroup diffopen
-  au!
-  au FilterWritePre * if &diff | colorscheme jellybeans | endif
+  autocmd!
+  autocmd FilterWritePre * if &diff | colorscheme jellybeans | endif
 augroup end
 
 "Search settings"
@@ -91,9 +102,9 @@ set showmatch
 set ignorecase
 set smartcase
 augroup hltoggle
-  au!
-  au InsertEnter * set nohlsearch
-  au InsertLeave * set hlsearch
+  autocmd!
+  autocmd InsertEnter * set nohlsearch
+  autocmd InsertLeave * set hlsearch
 augroup end
 
 "Indentation settings"
@@ -131,7 +142,10 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
 
 "Resize splits when window is resized"
-au VimResized * :wincmd =
+augroup windowResize
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup end
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
@@ -146,6 +160,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
 "Syntastic settings"
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_mode_map={
 \ 'mode': 'active',
 \ 'active_filetypes': [],
@@ -159,18 +174,23 @@ let g:ctrlp_use_caching = 0
 "Indent Guide settings"
 let g:indent_guides_auto_colors = 0
 augroup indentGuide
-  au!
+  autocmd!
   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=237
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 augroup end
 
+"Snipmate mappings"
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 "Filetype specific settings"
 augroup typeSpecific
-  au!
-  au FileType make setlocal noexpandtab
-  au FileType java setlocal sw=4 ts=4
-  au FileType blade setlocal filetype=blade.html
-  au FileType blade hi htmlError ctermfg=186
+  autocmd!
+  autocmd FileType make setlocal noexpandtab
+  autocmd FileType java setlocal sw=4 ts=4
+  autocmd FileType blade setlocal filetype=blade.html
+  autocmd FileType blade hi htmlError ctermfg=186
+  autocmd BufNewFile,BufRead Guardfile setlocal ft=ruby
 augroup end
 
 "YouCompleteMe settings"
@@ -181,6 +201,40 @@ set completeopt-=preview
 
 "LiteDFM settings"
 let g:lite_dfm_keep_ruler=1
+
+"Gitgutter settings"
+let g:gitgutter_enabled = 0
+
+"Ctag settings"
+set tags=./.coffeetags,.coffeetags,./.rippertags,.rippertags,./.ctaglist,.ctaglist
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+  \   'ctagsbin' : 'coffeetags',
+  \   'ctagsargs' : '--include-vars',
+  \   'kinds' : [
+  \     'f:functions',
+  \     'o:object',
+  \   ],
+  \   'sro' : ".",
+  \   'kind2scope' : {
+  \     'f' : 'object',
+  \     'o' : 'object',
+  \   }
+  \ }
+endif
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+  \   'ctagsbin' : 'ripper-tags',
+  \   'kinds' : [
+  \     'm:modules',
+  \     'c:classes',
+  \     'd:describes',
+  \     'C:contexts',
+  \     'f:methods',
+  \     'F:singleton methods'
+  \   ]
+  \ }
+endif
 
 "Leader mappings"
 let mapleader=","
@@ -203,3 +257,13 @@ nnoremap <leader>b :Tagbar<cr>
 "Local vimrc settings"
 let g:localvimrc_sandbox=0
 let g:localvimrc_whitelist='/Users/bilalq/\(Documents\|Sites\)/.*'
+
+
+"Temporary settings"
+let g:cycle_color = 0
+function! ColCycle() 
+  execute 'hi LineNr ctermbg=' . g:cycle_color
+  let g:cycle_color = g:cycle_color < 255 ? g:cycle_color + 1 : 0
+endfunction
+command! ColCycle call ColCycle()
+nnoremap <Leader>m :ColCycle<CR>
