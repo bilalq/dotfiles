@@ -23,4 +23,8 @@ Thumbs.db
 .log
 !logs/.gitignore
 !logs/.gitkeep
-tags
+
+# CTag files
+.ctaglist
+.coffeetags
+.rippertags

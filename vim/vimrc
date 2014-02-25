@@ -198,6 +198,7 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+let g:EclimCompletionMethod = 'omnifunc'
 
 "LiteDFM settings"
 let g:lite_dfm_keep_ruler=1

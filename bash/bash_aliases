@@ -25,6 +25,7 @@ alias cl='clear;ls'
 alias ..='cd ..'
 alias tmux='tmux -2'
 alias racket='racket -il xrepl'
+alias tag="ctags && (which coffeetags && coffeetags -R -f .coffeetags || true) && (which ripper-tags && ripper-tags -R --exclude=vendor -f .rippertags)"
 
 # Moving around
 alias me='cd ~/;ls'
@@ -37,3 +38,6 @@ alias line='ssh villustrator.com'
 
 # Laravel aliases
 alias art='php artisan'
+
+# Eclim
+alias eclim='~/Downloads/eclipse/eclimd'
