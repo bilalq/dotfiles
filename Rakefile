@@ -34,7 +34,7 @@ task :simple_vim do
 end
 
 task :misc do
-  targets = ["inputrc", "jshintrc", "irbrc", "tmux.conf"]
+  targets = ["ctags", "inputrc", "jshintrc", "irbrc", "tmux.conf"]
   targets.each do |target|
     begin
       sh "ln -s `pwd`/misc/#{target} ~/.#{target}"
