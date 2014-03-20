@@ -9,13 +9,8 @@
 ##Installation Instructions##
 Get the repo:
 
-    git clone --recursive https://github.com/bilalq/dotfiles.git
+    git clone https://github.com/bilalq/dotfiles.git
     cd dotfiles
-
-If you forgot to use the `--recursive` flag or
-are using an older version of git, run this command:
-
-    rake up
 
 From here, you can install whatever tickles your fancy. For example:
 
