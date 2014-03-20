@@ -13,7 +13,6 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 
 "Features"
-Bundle 'ruby-matchit'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'gregsexton/MatchTag'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -36,13 +35,13 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'mtth/scratch.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bilalq/lite-dfm'
+Bundle 'bilalq/ruby-matchit'
 Bundle 'junegunn/goyo.vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'AndrewRadev/linediff.vim'
-"Bundle 'othree/javascript-libraries-syntax.vim'
 
 "Language support"
 Bundle 'bilalq/vim-javascript'
